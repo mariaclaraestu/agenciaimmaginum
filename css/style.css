@@ -1,0 +1,114 @@
+*{
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+header{
+
+    background-color: #0b111f;
+    height: 80px;
+    padding: 0px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2fd8ff;
+
+}
+
+body{
+  background-color: #05060b;
+    color: white;
+   font-family: "Orbitron", sans-serif;
+
+}
+
+/*
+==============
+    AVISO
+==============
+*/
+
+
+#aviso{
+
+    background-color:rgba(0,0,0,.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 999;
+   transition: 0.5s;
+
+}
+
+.box{
+
+    width: 700px;
+    max-width:90%;
+    box-shadow: rgba(39, 216, 255, 0.25) 0px 0px 30px;
+    background: rgb(8, 16, 28);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(39, 216, 255);
+    border-image: initial;
+    padding: 50px;
+}
+
+.box h2{
+
+    font-family: "Orbitron", sans-serif;
+    margin:25px 0;
+
+
+}
+
+.box p{
+
+    line-height: 2;
+    color: #d0d0d0;
+
+}
+
+.box .nivel{
+
+    color:#2fd8ff;
+    letter-spacing:3px;
+    font-size:15px;
+    margin-top:0;
+
+}
+
+
+button{
+
+    margin-top:35px;
+    padding:15px 35px;
+    background:#27d8ff;
+    border:none;
+    cursor:pointer;
+    font-family:"Orbitron";
+    transition:.3s;
+
+}
+
+.box button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px #27d8ff;
+}
+
+#aviso.hidden{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
