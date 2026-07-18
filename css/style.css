@@ -1,29 +1,91 @@
-*{
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
 
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+:root {
+  --cor-primaria: #2fd8ff;
+  --cor-secundaria: ;
+  --cor-destaque: #0b111f;
+  --cor-fundo: #05060b;
+  --aviso-btncor: #27d8ff;
+}
+
+body {
+  background:
+    radial-gradient(circle at top,#1c2c5f 0%,#05060b 60%)no-repeat fixed;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+}
+
+header {
+  background-color: #0b111f;
+  height: 120px;
+  padding: 0px 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--cor-primaria);
+}
+
+#titulo {
+  font-size: 45px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 10px; /* Espaçamento extremo de sigla militar */
+  position: relative;
+  display: inline-block;
+  
+  /* Cor interna: Cinza titânio opaco de blindagem */
+  color: #1e293b; 
+  
+  /* Cria uma borda de luz afiada ao redor das letras */
+  -webkit-text-stroke: 1px var(--cor-primaria);
+  
+  /* GLITCH QUÂNTICO ESTÁTICO (Interferência de criptografia) */
+  text-shadow: 
+    3px 0px 0px rgba(0, 255, 255, 0.4),
+    -3px 0px 0px rgba(255, 0, 127, 0.3),
+    0px 0px 10px rgba(47, 216, 255, 0.6);
+}
+
+
+nav ul {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+  justify-content: center;
+  position: absolute;
+    top: 40px;
+    left: 780px;
+    font-size: 23px;
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
 
 }
 
-header{
+nav a:hover{
 
-    background-color: #0b111f;
-    height: 80px;
-    padding: 0px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #2fd8ff;
+    color:var(--aviso-btncor);
 
 }
 
-body{
-  background-color: #05060b;
-    color: white;
-   font-family: "Orbitron", sans-serif;
-
+main {
+  background:
+    radial-gradient(circle at top,#1c2c5f 0%,#05060b 60%);
+    
 }
+
+/*
+==============
+    QG
+==============
+*/
 
 /*
 ==============
@@ -31,84 +93,66 @@ body{
 ==============
 */
 
-
-#aviso{
-
-    background-color:rgba(0,0,0,.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-   justify-content: center;
-   align-items: center;
-   z-index: 999;
-   transition: 0.5s;
-
+#aviso {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: 0.5s;
 }
 
-.box{
-
-    width: 700px;
-    max-width:90%;
-    box-shadow: rgba(39, 216, 255, 0.25) 0px 0px 30px;
-    background: rgb(8, 16, 28);
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(39, 216, 255);
-    border-image: initial;
-    padding: 50px;
+.box {
+  width: 700px;
+  max-width: 90%;
+  box-shadow: rgba(39, 216, 255, 0.25) 0px 0px 30px;
+  background: rgb(8, 16, 28);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(39, 216, 255);
+  border-image: initial;
+  padding: 50px;
 }
 
-.box h2{
-
-    font-family: "Orbitron", sans-serif;
-    margin:25px 0;
-
-
+.box h2 {
+  font-family: "Orbitron", sans-serif;
+  margin: 25px 0;
 }
 
-.box p{
-
-    line-height: 2;
-    color: #d0d0d0;
-
+.box p {
+  line-height: 2;
+  color: #d0d0d0;
 }
 
-.box .nivel{
-
-    color:#2fd8ff;
-    letter-spacing:3px;
-    font-size:15px;
-    margin-top:0;
-
+.box .nivel {
+  color: var(--cor-primaria) ;
+  letter-spacing: 3px;
+  font-size: 15px;
+  margin-top: 0;
 }
 
-
-button{
-
-    margin-top:35px;
-    padding:15px 35px;
-    background:#27d8ff;
-    border:none;
-    cursor:pointer;
-    font-family:"Orbitron";
-    transition:.3s;
-
+button {
+  margin-top: 35px;
+  padding: 15px 35px;
+  background: var(--aviso-btncor);
+  border: none;
+  cursor: pointer;
+  font-family: "Orbitron";
+  transition: 0.3s;
 }
 
-.box button:hover{
+.box button:hover {
+  transform: scale(1.05);
 
-    transform:scale(1.05);
-
-    box-shadow:0 0 20px #27d8ff;
+  box-shadow: 0 0 20px var(--aviso-btncor);
 }
 
-#aviso.hidden{
-
-    opacity:0;
-    visibility:hidden;
-
+#aviso.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
-
