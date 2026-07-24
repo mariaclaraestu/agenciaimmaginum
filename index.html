@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Agência IMMAGINUM</title>
+
     <link rel="stylesheet" href="css/style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;800&display=swap"
       rel="stylesheet"
@@ -14,55 +18,135 @@
   </head>
 
   <body>
+    <!-- ===========================
+          HEADER
+  ============================ -->
+
     <header>
       <h1 id="titulo">Agência IMMAGINUM</h1>
-      <!--Instituto Multiversal de Monitoramento, Análise, Geração e Integração do Nexus Multiversal-->
+
       <nav>
         <ul>
-          <li><a href="qg.html">QG</a></li>
-          <li><a href="multiverso.html">Multiverso</a></li>
-          <li><a href="logs.html">Logs</a></li>
+          <li>
+            <a href="index.html">Central</a>
+          </li>
+
+          <li>
+            <a href="multiverso.html">Multiverso</a>
+          </li>
+
+          <li>
+            <a href="logs.html">Logs</a>
+          </li>
         </ul>
       </nav>
     </header>
 
+    <!-- ===========================
+          CONTEÚDO
+  ============================ -->
+
     <main>
       <div class="container">
-        <!-- Futuramente entra aqui o conteúdo do site -->
-      </div>
+        <p>
+          Olá, Guardião. Parece que você chegou há pouco tempo ao Nexus.
 
-      <div id="aviso">
-        <div class="box">
-          <p class="nivel">NÍVEL DE ACESSO: GUARDIÃO</p>
+          <br /><br />
+          Não se preocupe, é normal se sentir um pouco perdido no começo.
 
-          <h2>AGÊNCIA IMMAGINUM</h2>
-
-          <p>
-            BEM VINDO novo guardião.
-
-            <br /><br />
-
-            Você acaba de acessar um servidor pertencente à Agência IMMAGINUM.
-
-            <br /><br />
-
-            Como novo guardião você terá o dever de estudar, monitorar e
-            proteger outros universos.
-
-            <br /><br />
-
-            A exposição prolongada as informações ira alterar sua percepção
-            sobre a realidade.
-
-            <br /><br />
-
-            Esteja preparado.
-          </p>
-
-          <button onclick="entrar()">Prosseguir</button>
-        </div>
+          <br /><br />
+          Eu vou te explicar como as coisas funcionam por aqui e guiá-lo pelos caminhos da Agência IMMAGINUM.
+        </p>
       </div>
     </main>
+
+    <!-- ===========================
+          SISTEMA / ACESSO
+  ============================ -->
+
+    <div id="aviso">
+      <!-- =======================
+            TELA DE AVISO
+    ======================== -->
+
+      <div class="box" id="tela-aviso">
+        <p class="nivel">NÍVEL DE ACESSO: GUARDIÃO</p>
+
+        <h2>AGÊNCIA IMMAGINUM</h2>
+
+        <p>
+          BEM-VINDO, novo Guardião.
+
+          <br /><br />
+
+          Você acaba de acessar um servidor pertencente à Agência IMMAGINUM.
+
+          <br /><br />
+
+          Como novo Guardião, você terá o dever de estudar, monitorar e proteger
+          outros universos.
+
+          <br /><br />
+
+          A exposição prolongada às informações poderá alterar sua percepção da
+          realidade.
+
+          <br /><br />
+
+          Esteja preparado.
+        </p>
+
+        <button onclick="entrar()">Prosseguir</button>
+      </div>
+
+      <!-- =======================
+            TELA DE LOADING
+    ======================== -->
+
+      <div class="box hidden" id="tela-loading">
+        <h2>INICIALIZANDO IMMAGINUM-CORE</h2>
+
+        <div id="loading-area">
+          <!-- ETAPA ATUAL -->
+
+          <div id="etapa">Preparando sistema...</div>
+
+          <!-- BARRA -->
+
+          <div class="barra-container">
+            <div id="barra"></div>
+          </div>
+
+          <!-- STATUS -->
+
+          <div id="resultado"></div>
+        </div>
+
+        <!-- =======================
+              DADOS FINAIS
+      ======================== -->
+
+        <div id="status-final" class="hidden">
+          <pre>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROTOCOLO.......... NEXUS-01
+
+CRIPTOGRAFIA....... QUANTUM LOCK
+
+SINCRONIZAÇÃO...... MULTIVERSAL
+
+CANAL.............. CORE-Δ7
+
+AUTORIZAÇÃO........ GUARDIÃO
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre
+          >
+        </div>
+      </div>
+    </div>
+
     <script src="js/aviso.js"></script>
   </body>
 </html>

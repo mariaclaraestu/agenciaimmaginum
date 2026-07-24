@@ -1,42 +1,107 @@
+/*
+====================================================
+RESET
+====================================================
+*/
+
 * {
-  padding: 0px;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/*
+====================================================
+VARIÁVEIS
+====================================================
+*/
+
 :root {
   --cor-primaria: #2fd8ff;
-  --cor-secundaria: ;
-  --cor-destaque: #0b111f;
+
   --cor-fundo: #05060b;
-  --aviso-btncor: #27d8ff;
+
+  --cor-header: #0b111f;
+
+  --cor-box: rgba(8, 16, 28, 0.95);
+
+  --cor-texto: #d0d0d0;
+
+  --cor-botao: #27d8ff;
+
+  --cor-ok: #00ff9d;
+
+  --cor-barra: #2fd8ff;
+
+  --sombra-neon:
+    0 0 10px rgba(47, 216, 255, 0.5), 0 0 30px rgba(47, 216, 255, 0.2);
 }
+
+/*
+====================================================
+BODY
+====================================================
+*/
 
 body {
-  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%) no-repeat fixed;
+  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%);
+
   color: white;
+
   font-family: "Orbitron", sans-serif;
+
+  overflow-x: hidden;
+
+  min-height: 100vh;
 }
 
-header {
- width: 100%;
-  background-color: #0b111f;
-  min-height: px;
-  padding: 0 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  border-bottom: 1px solid var(--cor-primaria);
+.container p {
+  font-size: 23px;
+  
 }
+
+/*
+====================================================
+HEADER
+====================================================
+*/
+
+header {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 0 100px;
+
+  background: linear-gradient(90deg, #080d18, #0b111f, #080d18);
+
+  border-bottom: 1px solid var(--cor-primaria);
+
+  position: relative;
+
+  z-index: 10;
+}
+
+/*
+====================================================
+LOGO
+====================================================
+*/
 
 #titulo {
   font-size: 45px;
+
   font-weight: 900;
+
   text-transform: uppercase;
+
   letter-spacing: 10px;
-  position: relative;
-  display: inline-block;
 
   color: #1e293b;
 
@@ -45,190 +110,477 @@ header {
   text-shadow:
     3px 0px 0px rgba(0, 255, 255, 0.4),
     -3px 0px 0px rgba(255, 0, 127, 0.3),
-    0px 0px 10px rgba(47, 216, 255, 0.6);
+    0 0 15px rgba(47, 216, 255, 0.7);
 }
 
+/*
+====================================================
+MENU
+====================================================
+*/
+
 nav ul {
-  display: flex;
-  gap: 60px;
   list-style: none;
+
+  display: flex;
+
+  gap: 60px;
+
   font-size: 23px;
 }
 
 nav a {
   color: white;
+
   text-decoration: none;
+
+  transition: 0.3s;
+
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--cor-primaria);
+
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: var(--aviso-btncor);
+  color: var(--cor-botao);
 }
 
-main {
-  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%);
+nav a:hover::after {
+  width: 100%;
 }
-
 
 /*
-==============
-    CONTAINER
-==============
+====================================================
+MAIN
+====================================================
+*/
+
+main {
+  min-height: 100vh;
+
+  background: radial-gradient(
+    circle at top,
+
+    #1c2c5f 0%,
+
+    #05060b 60%
+  );
+}
+
+/*
+====================================================
+CONTAINER
+====================================================
 */
 
 .container {
   width: 90%;
+
   max-width: 1400px;
+
   margin: 0 auto;
 }
 
-
 /*
-==============
-    AVISO
-==============
+====================================================
+AVISO / SISTEMA
+====================================================
 */
 
 #aviso {
-  background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+  inset: 0;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  backdrop-filter: blur(6px);
+
   z-index: 999;
-  transition: 0.5s;
-}
 
-.box {
-  width: 700px;
-  max-width: 90%;
-  box-shadow: rgba(39, 216, 255, 0.25) 0px 0px 30px;
-  background: rgb(8, 16, 28);
-  border: 1px solid rgb(39, 216, 255);
-  padding: 50px;
-}
-
-.box h2 {
-  font-family: "Orbitron", sans-serif;
-  margin: 25px 0;
-  letter-spacing: 2px;
-}
-
-.box p {
-  line-height: 2;
-  color: #d0d0d0;
-  letter-spacing: 2px;
-}
-
-.box .nivel {
-  color: var(--cor-primaria);
-  letter-spacing: 3px;
-  font-size: 15px;
-  margin-top: 0;
-}
-
-button {
-  margin-top: 35px;
-  padding: 15px 35px;
-  background: var(--aviso-btncor);
-  border: none;
-  cursor: pointer;
-  font-family: "Orbitron";
-  transition: 0.3s;
-}
-
-.box button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--aviso-btncor);
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 
 #aviso.hidden {
   opacity: 0;
+
   visibility: hidden;
 }
 
-
 /*
-=====================
-    RESPONSIVIDADE
-=====================
+====================================================
+BOX
+====================================================
 */
 
+.box {
+  width: 700px;
 
-/* TABLET */
-@media (max-width: 900px) {
+  max-width: 90%;
 
-  header {
-    padding: 20px; /* Diminuído para dar mais espaço nas laterais */
-    gap: 15px;     /* Diminuído o espaço entre o logo e o menu */
-  }
+  background: var(--cor-box);
 
-  #titulo {
-    font-size: 24px;       /* Letras do título menores para caber na linha */
-    letter-spacing: 3px;   /* Letras um pouco mais juntas */
-    white-space: nowrap;
-  }
+  border: 1px solid var(--cor-primaria);
 
-  nav ul {
-    gap: 20px;       /* Espaço menor entre um botão e outro */
-    font-size: 16px; /* Letras do menu um pouco menores */
-  }
+  box-shadow: 0 0 35px rgba(39, 216, 255, 0.25);
 
-  .box {
-    width: 80%;
-    padding: 35px;
-  }
+  padding: 50px;
 
+  position: relative;
+
+  overflow: hidden;
 }
 
+/*
+efeito de linha de sistema no topo
+*/
 
-/* CELULAR */
-@media (max-width: 600px) {
+.box::before {
+  content: "";
 
-  header {
-    flex-direction: column;
-    justify-content: center;
-    padding: 25px 20px;
-    gap: 30px;
-  }
+  position: absolute;
 
+  top: 0;
 
-  #titulo {
-font-size: 22px;
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: var(--cor-primaria);
+
+  box-shadow: var(--sombra-neon);
+}
+
+/*
+====================================================
+TELAS
+====================================================
+*/
+
+#tela-aviso,
+#tela-loading {
+  transition: opacity 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/*
+====================================================
+TÍTULOS
+====================================================
+*/
+
+.box h2 {
+  margin: 25px 0;
+
   letter-spacing: 3px;
-  text-align: center;
-  white-space: nowrap;
+
+  font-size: 28px;
+
+  color: var(--cor-primaria);
+
+  text-shadow: 0 0 10px rgba(47, 216, 255, 0.5);
+}
+
+.nivel {
+  color: var(--cor-primaria);
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+}
+
+.box p {
+  color: var(--cor-texto);
+
+  line-height: 2;
+
+  letter-spacing: 2px;
+}
+
+/*
+====================================================
+BOTÃO
+====================================================
+*/
+
+button {
+  margin-top: 35px;
+
+  padding: 15px 35px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background: var(--cor-botao);
+
+  color: #000;
+
+  font-family: "Orbitron";
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 0 20px var(--cor-botao);
+}
+
+/*
+====================================================
+ÁREA DE LOADING
+====================================================
+*/
+
+#loading-area {
+  margin-top: 40px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: #bfefff;
+
+  text-align: left;
+}
+
+/*
+====================================================
+ETAPA ATUAL
+====================================================
+*/
+
+#etapa {
+  font-size: 18px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 25px;
+
+  color: var(--cor-primaria);
+}
+
+/*
+====================================================
+BARRA DE DOWNLOAD
+====================================================
+*/
+
+.barra-container {
+  width: 100%;
+
+  height: 18px;
+
+  border: 1px solid rgba(47, 216, 255, 0.5);
+
+  background: rgba(0, 0, 0, 0.5);
+
+  overflow: hidden;
+
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+#barra {
+  height: 100%;
+
+  width: 0%;
+
+  background: linear-gradient(90deg, #27d8ff, #00ffff);
+
+  box-shadow: 0 0 15px var(--cor-primaria);
+
+  transition: width 0.2s linear;
+}
+
+/*
+====================================================
+RESULTADO DA ETAPA
+====================================================
+*/
+
+#resultado {
+  margin-top: 20px;
+
+  min-height: 30px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: var(--cor-ok);
+
+  letter-spacing: 2px;
+
+  font-size: 16px;
+}
+
+/*
+====================================================
+PAINEL FINAL NEXUS
+====================================================
+*/
+
+#status-final {
+  margin-top: 40px;
+
+  border-top: 1px solid rgba(47, 216, 255, 0.25);
+
+  padding-top: 30px;
+}
+
+#status-final pre {
+  font-family: "JetBrains Mono", monospace;
+
+  color: var(--cor-primaria);
+
+  font-size: 15px;
+
+  line-height: 2;
+
+  letter-spacing: 2px;
+
+  white-space: pre-wrap;
+
+  text-shadow: 0 0 8px rgba(47, 216, 255, 0.5);
+}
+
+/*
+====================================================
+EFEITOS DE SISTEMA
+====================================================
+*/
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
   }
 
+  to {
+    opacity: 1;
 
-  nav ul {
-    gap: 20px;
-    font-size: 15px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
 
+  to {
+    opacity: 0;
+  }
+}
 
-  .box {
-    width: 90%;
-    padding: 25px;
+/*
+====================================================
+CURSOR DE TERMINAL
+====================================================
+*/
+
+#etapa::after {
+  content: "▋";
+
+  margin-left: 8px;
+
+  color: var(--cor-primaria);
+
+  animation: piscar 0.8s infinite;
+}
+
+@keyframes piscar {
+  0%,
+  100% {
+    opacity: 1;
   }
 
+  50% {
+    opacity: 0.2;
+  }
+}
 
-  .box h2 {
-    font-size: 20px;
+/*
+====================================================
+BRILHO DA BARRA
+====================================================
+*/
+
+@keyframes brilhoBarra {
+  0% {
+    opacity: 0.6;
   }
 
-
-  .box p {
-    font-size: 14px;
-    letter-spacing: 1px;
+  50% {
+    opacity: 1;
   }
 
-
-  button {
-    width: 100%;
+  100% {
+    opacity: 0.6;
   }
+}
 
+#barra {
+  animation: brilhoBarra 1s infinite;
+}
+
+/*
+====================================================
+LINHA DE SISTEMA
+====================================================
+*/
+
+#status-final::before {
+  content: "SISTEMA ONLINE // CONEXÃO ESTABELECIDA";
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: var(--cor-ok);
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
 }
