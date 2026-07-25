@@ -18,23 +18,22 @@ VARIÁVEIS
 
 :root {
   --cor-primaria: #2fd8ff;
+  --cor-secundaria: #27d8ff;
 
   --cor-fundo: #05060b;
 
   --cor-header: #0b111f;
 
-  --cor-box: rgba(8, 16, 28, 0.95);
+  --cor-box: rgba(8, 16, 28, 0.92);
 
   --cor-texto: #d0d0d0;
-
-  --cor-botao: #27d8ff;
 
   --cor-ok: #00ff9d;
 
   --cor-barra: #2fd8ff;
 
   --sombra-neon:
-    0 0 10px rgba(47, 216, 255, 0.5), 0 0 30px rgba(47, 216, 255, 0.2);
+    0 0 10px rgba(47, 216, 255, 0.45), 0 0 30px rgba(47, 216, 255, 0.18);
 }
 
 /*
@@ -44,20 +43,91 @@ BODY
 */
 
 body {
-  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%);
+  background: radial-gradient(circle at top, #1b2c5c 0%, #05060b 65%);
 
   color: white;
 
   font-family: "Orbitron", sans-serif;
 
-  overflow-x: hidden;
+  min-height: 100vh;
 
+  overflow-x: hidden;
+}
+
+/*
+====================================================
+MAIN
+====================================================
+*/
+
+main {
   min-height: 100vh;
 }
 
+/*
+====================================================
+CONTAINER PRINCIPAL
+====================================================
+*/
+
+.container {
+  width: min(92%, 1200px);
+
+  margin: auto;
+
+  margin-top: 70px;
+
+  padding: 40px;
+
+  position: relative;
+
+  background: linear-gradient(
+    180deg,
+    rgba(16, 26, 48, 0.88),
+    rgba(8, 14, 26, 0.94)
+  );
+
+  border: 1px solid rgba(47, 216, 255, 0.18);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 30px rgba(47, 216, 255, 0.05),
+    inset 0 0 20px rgba(47, 216, 255, 0.03);
+}
+
+/*
+====================================================
+TEXTOS DO CONTAINER
+====================================================
+*/
+
+.container h2 {
+  color: var(--cor-primaria);
+
+  font-size: 2rem;
+
+  margin-bottom: 25px;
+
+  letter-spacing: 0.5px;
+
+  text-shadow: 0 0 10px rgba(47, 216, 255, 0.35);
+}
+
 .container p {
-  font-size: 23px;
-  
+  color: #d7e0ea;
+
+  font-size: 1.08rem;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.3px;
+
+  margin-bottom: 18px;
+}
+
+.container p:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -69,47 +139,53 @@ HEADER
 header {
   width: 100%;
 
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
   display: flex;
 
   justify-content: space-between;
 
   align-items: center;
 
-  gap: 30px;
-
-  padding: 0 100px;
+  padding: 18px 6%;
 
   background: linear-gradient(90deg, #080d18, #0b111f, #080d18);
 
-  border-bottom: 1px solid var(--cor-primaria);
+  border-bottom: 1px solid rgba(47, 216, 255, 0.25);
 
-  position: relative;
+  backdrop-filter: blur(10px);
 
-  z-index: 10;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
 }
 
 /*
 ====================================================
-LOGO
+LOGO / TÍTULO
 ====================================================
 */
 
 #titulo {
-  font-size: 45px;
+  color: #172435;
+
+  font-size: 2.6rem;
 
   font-weight: 900;
 
   text-transform: uppercase;
 
-  letter-spacing: 10px;
+  letter-spacing: 6px;
 
-  color: #1e293b;
+  line-height: 1;
 
   -webkit-text-stroke: 1px var(--cor-primaria);
 
   text-shadow:
-    3px 0px 0px rgba(0, 255, 255, 0.4),
-    -3px 0px 0px rgba(255, 0, 127, 0.3),
+    3px 0 0 rgba(0, 255, 255, 0.35),
+    -3px 0 0 rgba(255, 0, 120, 0.25),
     0 0 15px rgba(47, 216, 255, 0.7);
 }
 
@@ -120,23 +196,41 @@ MENU
 */
 
 nav ul {
-  list-style: none;
-
   display: flex;
 
-  gap: 60px;
+  align-items: center;
 
-  font-size: 23px;
+  list-style: none;
+
+  gap: 45px;
+}
+
+nav li {
+  list-style: none;
 }
 
 nav a {
+  position: relative;
+
   color: white;
 
   text-decoration: none;
 
-  transition: 0.3s;
+  font-size: 1rem;
 
-  position: relative;
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+/*
+====================================================
+EFEITO HOVER DO MENU
+====================================================
+*/
+
+nav a:hover {
+  color: var(--cor-primaria);
 }
 
 nav a::after {
@@ -154,11 +248,9 @@ nav a::after {
 
   background: var(--cor-primaria);
 
-  transition: 0.3s;
-}
+  box-shadow: 0 0 8px var(--cor-primaria);
 
-nav a:hover {
-  color: var(--cor-botao);
+  transition: 0.3s;
 }
 
 nav a:hover::after {
@@ -167,39 +259,125 @@ nav a:hover::after {
 
 /*
 ====================================================
-MAIN
+TABLET
 ====================================================
 */
 
-main {
-  min-height: 100vh;
+@media (max-width: 1024px) {
+  header {
+    padding: 18px 30px;
 
-  background: radial-gradient(
-    circle at top,
+    gap: 20px;
+  }
 
-    #1c2c5f 0%,
+  #titulo {
+    font-size: 2rem;
 
-    #05060b 60%
-  );
+    letter-spacing: 4px;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    width: 92%;
+
+    padding: 30px;
+  }
 }
 
 /*
 ====================================================
-CONTAINER
+CELULAR
 ====================================================
 */
 
-.container {
-  width: 90%;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
 
-  max-width: 1400px;
+    justify-content: center;
 
-  margin: 0 auto;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+  }
+
+  #titulo {
+    text-align: center;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 3px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 92%;
+
+    margin-top: 40px;
+
+    padding: 25px;
+  }
+
+  .container h2 {
+    font-size: 1.6rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
 }
 
 /*
 ====================================================
-AVISO / SISTEMA
+CELULAR PEQUENO
+====================================================
+*/
+
+@media (max-width: 480px) {
+  #titulo {
+    font-size: 1.4rem;
+
+    letter-spacing: 2px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+}
+
+/*
+====================================================
+TELA DE AVISO / SISTEMA
 ====================================================
 */
 
@@ -233,7 +411,22 @@ AVISO / SISTEMA
 
 /*
 ====================================================
-BOX
+TELAS
+====================================================
+*/
+
+#tela-aviso,
+#tela-loading {
+  transition: opacity 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/*
+====================================================
+BOX DO SISTEMA
 ====================================================
 */
 
@@ -256,7 +449,9 @@ BOX
 }
 
 /*
-efeito de linha de sistema no topo
+====================================================
+LINHA SUPERIOR DE SISTEMA
+====================================================
 */
 
 .box::before {
@@ -279,22 +474,7 @@ efeito de linha de sistema no topo
 
 /*
 ====================================================
-TELAS
-====================================================
-*/
-
-#tela-aviso,
-#tela-loading {
-  transition: opacity 0.4s ease;
-}
-
-.hidden {
-  display: none;
-}
-
-/*
-====================================================
-TÍTULOS
+TÍTULOS DA CAIXA
 ====================================================
 */
 
@@ -328,7 +508,7 @@ TÍTULOS
 
 /*
 ====================================================
-BOTÃO
+BOTÃO DE AUTORIZAÇÃO
 ====================================================
 */
 
@@ -341,11 +521,11 @@ button {
 
   cursor: pointer;
 
-  background: var(--cor-botao);
+  background: var(--cor-secundaria);
 
   color: #000;
 
-  font-family: "Orbitron";
+  font-family: "Orbitron", sans-serif;
 
   font-weight: bold;
 
@@ -357,7 +537,7 @@ button {
 button:hover {
   transform: scale(1.05);
 
-  box-shadow: 0 0 20px var(--cor-botao);
+  box-shadow: 0 0 20px var(--cor-secundaria);
 }
 
 /*
@@ -394,6 +574,22 @@ ETAPA ATUAL
 
 /*
 ====================================================
+CURSOR DE TERMINAL
+====================================================
+*/
+
+#etapa::after {
+  content: "▋";
+
+  margin-left: 8px;
+
+  color: var(--cor-primaria);
+
+  animation: piscar 0.8s infinite;
+}
+
+/*
+====================================================
 BARRA DE DOWNLOAD
 ====================================================
 */
@@ -422,6 +618,8 @@ BARRA DE DOWNLOAD
   box-shadow: 0 0 15px var(--cor-primaria);
 
   transition: width 0.2s linear;
+
+  animation: brilhoBarra 1s infinite;
 }
 
 /*
@@ -446,7 +644,7 @@ RESULTADO DA ETAPA
 
 /*
 ====================================================
-PAINEL FINAL NEXUS
+PAINEL DE STATUS FINAL
 ====================================================
 */
 
@@ -488,6 +686,12 @@ EFEITOS DE SISTEMA
   animation: fadeOut 0.5s ease forwards;
 }
 
+/*
+====================================================
+ANIMAÇÃO ENTRADA
+====================================================
+*/
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -502,6 +706,12 @@ EFEITOS DE SISTEMA
   }
 }
 
+/*
+====================================================
+ANIMAÇÃO SAÍDA
+====================================================
+*/
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -514,19 +724,9 @@ EFEITOS DE SISTEMA
 
 /*
 ====================================================
-CURSOR DE TERMINAL
+CURSOR PISCANTE
 ====================================================
 */
-
-#etapa::after {
-  content: "▋";
-
-  margin-left: 8px;
-
-  color: var(--cor-primaria);
-
-  animation: piscar 0.8s infinite;
-}
 
 @keyframes piscar {
   0%,
@@ -559,13 +759,9 @@ BRILHO DA BARRA
   }
 }
 
-#barra {
-  animation: brilhoBarra 1s infinite;
-}
-
 /*
 ====================================================
-LINHA DE SISTEMA
+LINHA DE SISTEMA FINAL
 ====================================================
 */
 
@@ -583,4 +779,344 @@ LINHA DE SISTEMA
   font-size: 13px;
 
   letter-spacing: 3px;
+
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.5);
 }
+
+/*
+====================================================
+EFEITO DE TERMINAL
+====================================================
+*/
+
+.terminal-text {
+  font-family: "JetBrains Mono", monospace;
+
+  color: var(--cor-primaria);
+
+  letter-spacing: 2px;
+
+  line-height: 2;
+}
+
+/*
+====================================================
+STATUS DE SISTEMA
+====================================================
+*/
+
+.status-ok {
+  color: var(--cor-ok);
+
+  font-family: "JetBrains Mono", monospace;
+
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+/*
+====================================================
+BRILHO GERAL NEXUS
+====================================================
+*/
+
+.nexus-glow {
+  box-shadow:
+    0 0 20px rgba(47, 216, 255, 0.2),
+    inset 0 0 30px rgba(47, 216, 255, 0.05);
+}
+
+/*
+====================================================
+CENTRAL MIRA
+====================================================
+*/
+
+.central {
+  width: 100%;
+
+  margin-top: 40px;
+}
+
+/*
+====================================================
+PAINEL PRINCIPAL MIRA
+====================================================
+*/
+
+
+
+/*
+====================================================
+LINHA SUPERIOR DO SISTEMA MIRA
+====================================================
+*/
+
+.mira::before {
+  content: "MIRA // MULTIVERSAL INTELLIGENCE & RESEARCH ARCHIVE";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 12px 25px;
+
+  background: rgba(47, 216, 255, 0.08);
+
+  border-bottom: 1px solid rgba(47, 216, 255, 0.2);
+
+  color: var(--cor-primaria);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  box-sizing: border-box;
+}
+
+/*
+====================================================
+TÍTULO MIRA
+====================================================
+*/
+
+.mira h2 {
+  margin-top: 35px;
+
+  color: var(--cor-primaria);
+
+  font-size: 2.4rem;
+
+  letter-spacing: 3px;
+
+  text-shadow: 0 0 10px rgba(47, 216, 255, 0.5);
+}
+
+/*
+====================================================
+TEXTOS MIRA
+====================================================
+*/
+
+.mira p {
+  max-width: 900px;
+
+  color: #d8e4f0;
+
+  font-size: 1.15rem;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.5px;
+
+  margin-top: 25px;
+}
+
+/*
+====================================================
+DIVISOR MIRA
+====================================================
+*/
+
+.mira hr {
+  border: none;
+
+  height: 1px;
+
+  margin: 35px 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cor-primaria),
+    transparent
+  );
+}
+
+/*
+====================================================
+STATUS MISA
+====================================================
+*/
+
+.mira-status {
+  display: flex;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+/*
+====================================================
+ITEM DE STATUS
+====================================================
+*/
+
+.status-item {
+  padding: 12px 20px;
+
+  border: 1px solid rgba(47, 216, 255, 0.25);
+
+  background: rgba(0, 0, 0, 0.25);
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: var(--cor-ok);
+
+  font-size: 0.9rem;
+
+  letter-spacing: 2px;
+
+  box-shadow: inset 0 0 10px rgba(47, 216, 255, 0.03);
+}
+
+/*
+====================================================
+EFEITO HOVER MIRA
+====================================================
+*/
+
+.mira:hover {
+  border-color: rgba(47, 216, 255, 0.5);
+
+  box-shadow:
+    0 0 50px rgba(47, 216, 255, 0.12),
+    inset 0 0 40px rgba(47, 216, 255, 0.05);
+}
+
+/*
+====================================================
+RESPONSIVIDADE MIRA
+====================================================
+*/
+
+@media (max-width: 768px) {
+  .mira {
+    padding: 25px;
+  }
+
+  .mira h2 {
+    font-size: 1.7rem;
+
+    letter-spacing: 2px;
+  }
+
+  .mira p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
+
+  .mira-status {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .status-item {
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+/*
+====================================================
+TELAS PEQUENAS
+====================================================
+*/
+
+@media (max-width: 480px) {
+  .mira {
+    padding: 20px;
+  }
+
+  .mira::before {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    padding: 10px;
+  }
+
+  .mira h2 {
+    font-size: 1.4rem;
+  }
+
+  .box {
+    padding: 30px 20px;
+  }
+
+  .box h2 {
+    font-size: 22px;
+  }
+
+  #etapa {
+    font-size: 15px;
+  }
+
+  #status-final pre {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+}
+
+/*
+====================================================
+AJUSTES FINAIS DE SISTEMA
+====================================================
+*/
+
+img {
+  max-width: 100%;
+
+  height: auto;
+}
+
+/*
+====================================================
+SELEÇÃO DE TEXTO NEON
+====================================================
+*/
+
+::selection {
+  background: var(--cor-primaria);
+
+  color: #000;
+}
+
+/*
+====================================================
+SCROLLBAR FUTURISTA
+====================================================
+*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05060b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria);
+
+  box-shadow: 0 0 10px var(--cor-primaria);
+}
+
+/*
+====================================================
+FINAL CSS
+NEXUS + MIRA SYSTEM
+====================================================
+*/
