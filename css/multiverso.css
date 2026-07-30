@@ -62,8 +62,9 @@ MAIN
 
 main {
   min-height: 100vh;
-}
 
+  padding-top: 40px;
+}
 
 /*
 ====================================================
@@ -160,7 +161,7 @@ nav a {
 
 /*
 ====================================================
-EFEITO HOVER DO MENU
+HOVER MENU
 ====================================================
 */
 
@@ -194,19 +195,2119 @@ nav a:hover::after {
 
 /*
 ====================================================
-TABLET
+CONTAINER DOS PORTAIS
 ====================================================
 */
 
-@media (max-width: 1024px) {
-  header {
-    padding: 18px 30px;
+.container {
+  width: 100%;
 
-    gap: 20px;
+  display: grid;
+
+  grid-template-columns: repeat(5, 250px);
+
+  gap: 45px 55px;
+
+  justify-content: center;
+
+  align-items: start;
+
+  padding: 20px 40px;
+}
+
+/*
+====================================================
+BOX DO PORTAL - BASE
+====================================================
+*/
+
+.box {
+  position: relative;
+
+  width: 250px;
+
+  min-height: 390px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 28, 48, 0.95),
+    rgba(5, 8, 18, 0.98)
+  );
+
+  border: 1px solid rgba(47, 216, 255, 0.25);
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/*
+====================================================
+FUNDO TECNOLÓGICO DO CARD
+====================================================
+*/
+
+.box {
+  background:
+    linear-gradient(180deg, rgba(18, 28, 48, 0.95), rgba(5, 8, 18, 0.98)),
+    linear-gradient(
+      90deg,
+      rgba(47, 216, 255, 0.35) 2px,
+
+      transparent 2px
+    ),
+    linear-gradient(
+      0deg,
+      rgba(47, 216, 255, 0.35) 2px,
+
+      transparent 2px
+    );
+
+  background-size:
+    auto,
+    18px 18px,
+    18px 18px;
+
+  background-position:
+    center,
+    bottom right,
+    bottom right;
+
+  background-repeat: no-repeat;
+}
+
+/*
+====================================================
+CAMPO DE ENERGIA INTERNO
+====================================================
+*/
+
+.box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+
+  height: 280px;
+
+  left: 50%;
+
+  top: 55%;
+
+  transform: translate(-50%, -50%) scale(0.8);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(47, 216, 255, 0.3) 0%,
+
+    rgba(47, 216, 255, 0.12) 35%,
+
+    rgba(47, 216, 255, 0.04) 55%,
+
+    transparent 75%
+  );
+
+  filter: blur(18px);
+
+  opacity: 0.5;
+
+  z-index: -1;
+
+  transition: 0.5s ease;
+}
+
+/*
+====================================================
+LINHA DE CONTENÇÃO SUPERIOR
+====================================================
+*/
+
+.box::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 20px;
+
+  right: 20px;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cor-primaria),
+    transparent
+  );
+
+  opacity: 0.6;
+
+  transition: 0.4s;
+}
+
+/*
+====================================================
+ÁREA DA IMAGEM
+====================================================
+*/
+
+.box figure {
+  position: relative;
+
+  width: 100%;
+
+  height: 320px;
+
+  overflow: hidden;
+}
+
+.box img {
+  position: relative;
+
+  width: 100%;
+
+  height: 320px;
+
+  object-fit: cover;
+
+  z-index: 3;
+
+  transition: 0.4s;
+}
+
+/*
+====================================================
+HOVER DO PORTAL
+====================================================
+*/
+
+.box:hover {
+  transform: translateY(-10px) scale(1.03);
+
+  border-color: rgba(47, 216, 255, 0.9);
+
+  box-shadow:
+    0 0 15px rgba(47, 216, 255, 0.35),
+    0 0 45px rgba(47, 216, 255, 0.2),
+    inset 0 0 25px rgba(47, 216, 255, 0.08);
+}
+
+.box:hover::before {
+  transform: translate(-50%, -50%) scale(1.25);
+
+  opacity: 1;
+
+  filter: blur(10px);
+}
+
+.box:hover::after {
+  opacity: 1;
+
+  height: 3px;
+
+  box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+/*
+====================================================
+IMAGEM ATIVA
+====================================================
+*/
+
+.box:hover img {
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/*
+====================================================
+SISTEMA DE ENERGIA DOS PORTAIS
+====================================================
+*/
+
+.box {
+  --energia: rgba(47, 216, 255, 0.9);
+}
+
+/*
+====================================================
+PARTÍCULAS INTERNAS
+====================================================
+*/
+
+.box figure::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      var(--energia) 1px,
+
+      transparent 2px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+
+      transparent 2px
+    ),
+    radial-gradient(
+      circle,
+      var(--energia) 2px,
+
+      transparent 3px
+    );
+
+  background-size:
+    55px 55px,
+    80px 80px,
+    120px 120px;
+
+  background-position:
+    0 0,
+    30px 60px,
+    80px 20px;
+
+  opacity: 0;
+
+  z-index: 2;
+
+  transition: 0.5s;
+}
+
+/*
+====================================================
+ATIVAÇÃO DAS PARTÍCULAS
+====================================================
+*/
+
+.box:hover figure::before {
+  opacity: 0.7;
+
+  animation: particulasPortal 8s linear infinite;
+}
+
+@keyframes particulasPortal {
+  0% {
+    background-position:
+      0 0,
+      30px 60px,
+      80px 20px;
+  }
+
+  50% {
+    background-position:
+      50px -80px,
+      -40px 120px,
+      160px -40px;
+  }
+
+  100% {
+    background-position:
+      100px -160px,
+      -80px 200px,
+      240px -80px;
+  }
+}
+
+/*
+====================================================
+PULSO DIMENSIONAL
+====================================================
+*/
+
+.box:hover {
+  animation: portalPulso 2s infinite;
+}
+
+@keyframes portalPulso {
+  0% {
+    box-shadow:
+      0 0 20px rgba(47, 216, 255, 0.25),
+      inset 0 0 15px rgba(47, 216, 255, 0.05);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px rgba(47, 216, 255, 0.45),
+      inset 0 0 35px rgba(47, 216, 255, 0.15);
+  }
+
+  100% {
+    box-shadow:
+      0 0 20px rgba(47, 216, 255, 0.25),
+      inset 0 0 15px rgba(47, 216, 255, 0.05);
+  }
+}
+
+/*
+====================================================
+FLUXO DE ENERGIA NAS BORDAS
+====================================================
+*/
+
+.box:hover::after {
+  animation: energiaFluxo 1.8s linear infinite;
+}
+
+@keyframes energiaFluxo {
+  0% {
+    background-position: -250px;
+  }
+
+  100% {
+    background-position: 250px;
+  }
+}
+
+/*
+====================================================
+ESTABILIDADE DIMENSIONAL DA IMAGEM
+====================================================
+*/
+
+.box:hover img {
+  animation: estabilidadeImagem 3s infinite;
+}
+
+@keyframes estabilidadeImagem {
+  0%,
+  100% {
+    transform: scale(1.03);
+  }
+
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+/*
+====================================================
+PARTÍCULAS GERADAS PELO JAVASCRIPT
+====================================================
+*/
+
+.particula {
+  position: absolute;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  bottom: 0;
+
+  opacity: 0.8;
+
+  animation: subirParticula 3s infinite;
+}
+
+@keyframes subirParticula {
+  from {
+    transform: translateY(0) scale(0.5);
+
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-250px) scale(1.5);
+
+    opacity: 0;
+  }
+}
+
+/*
+====================================================
+CALL OF CTHULHU
+PORTAL ABISSAL
+====================================================
+*/
+
+.cthulhu {
+  --energia: #8b4dff;
+}
+
+.cthulhu::before {
+  background: radial-gradient(
+    circle,
+    rgba(139, 77, 255, 0.35),
+    rgba(90, 30, 160, 0.15) 35%,
+
+    transparent 70%
+  );
+}
+
+.cthulhu:hover {
+  border-color: rgba(139, 77, 255, 0.8);
+
+  box-shadow:
+    0 0 25px rgba(139, 77, 255, 0.35),
+    0 0 70px rgba(80, 20, 180, 0.25);
+}
+
+.cthulhu:hover::after {
+  background: linear-gradient(90deg, transparent, #8b4dff, transparent);
+}
+
+/* sombra viva do abismo */
+
+.cthulhu:hover figure::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+
+  height: 180px;
+
+  top: 120px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(139, 77, 255, 0.35),
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  animation: abismo 4s infinite;
+}
+
+@keyframes abismo {
+  0% {
+    transform: translateX(-50%) scale(0.8) translateY(10px);
+
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.2) translateY(-20px);
+
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(0.8) translateY(10px);
+
+    opacity: 0.4;
+  }
+}
+
+/*
+====================================================
+ORDEM PARANORMAL
+OUTRO LADO
+====================================================
+*/
+
+.ordem {
+  --energia: #ff003c;
+}
+
+.ordem::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 60, 0.35),
+    rgba(120, 0, 20, 0.15) 40%,
+
+    transparent 75%
+  );
+}
+
+.ordem:hover {
+  border-color: rgba(255, 0, 60, 0.9);
+
+  box-shadow:
+    0 0 25px rgba(255, 0, 60, 0.45),
+    0 0 80px rgba(255, 0, 60, 0.25);
+}
+
+.ordem:hover::after {
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 45%,
+
+      rgba(255, 0, 60, 0.8) 46%,
+
+      transparent 48%
+    ),
+    linear-gradient(
+      40deg,
+      transparent 50%,
+
+      rgba(255, 0, 60, 0.6) 51%,
+
+      transparent 53%
+    );
+
+  animation: rachaduras 1.5s infinite;
+}
+
+@keyframes rachaduras {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.ordem:hover figure::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6), transparent 60%);
+
+  filter: blur(15px);
+
+  animation: corrupcao 3s infinite;
+}
+
+@keyframes corrupcao {
+  0% {
+    transform: scale(0.8);
+
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.2);
+
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(0.8);
+
+    opacity: 0.2;
+  }
+}
+
+/*
+====================================================
+CYBERPUNK RED
+PORTAL CORROMPIDO
+====================================================
+*/
+
+.cyberpunk {
+  --energia: #00ffff;
+}
+
+.cyberpunk:hover {
+  animation: glitchCard 0.25s infinite;
+
+  border-color: #00ffff;
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.5),
+    0 0 70px rgba(255, 0, 120, 0.25);
+}
+
+@keyframes glitchCard {
+  0% {
+    transform: translateY(-10px) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(-3px);
+  }
+
+  50% {
+    transform: translateY(-10px) translateX(3px);
+  }
+
+  100% {
+    transform: translateY(-10px) translateX(0);
+  }
+}
+
+.cyberpunk:hover::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 255, 0.15),
+    rgba(0, 255, 255, 0.15) 2px,
+
+    transparent 2px,
+
+    transparent 5px
+  );
+
+  animation: scanDigital 1s linear infinite;
+}
+
+@keyframes scanDigital {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 40px;
+  }
+}
+
+.cyberpunk:hover img {
+  animation: imagemGlitch 0.4s infinite;
+}
+
+@keyframes imagemGlitch {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(180deg) contrast(1.5);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*
+====================================================
+KURO
+REDE HOLOGRÁFICA
+====================================================
+*/
+
+.kuro {
+  --energia: #00eaff;
+}
+
+.kuro:hover {
+  border-color: rgba(0, 234, 255, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(0, 234, 255, 0.5),
+    0 0 80px rgba(0, 180, 255, 0.25);
+}
+
+.kuro:hover::after {
+  inset: 10px;
+
+  height: auto;
+
+  background: repeating-linear-gradient(
+    60deg,
+    transparent 0,
+
+    transparent 15px,
+
+    rgba(0, 234, 255, 0.25) 16px,
+
+    transparent 17px
+  );
+
+  opacity: 0.8;
+
+  animation: redeKuro 3s linear infinite;
+}
+
+@keyframes redeKuro {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100px 100px;
+  }
+}
+
+/*
+====================================================
+D&D
+PORTAL ARCANO
+====================================================
+*/
+
+.dnd {
+  --energia: #ffd86b;
+}
+
+.dnd:hover {
+  border-color: rgba(255, 216, 107, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(255, 216, 107, 0.45),
+    0 0 90px rgba(255, 170, 50, 0.25);
+}
+
+.dnd::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 216, 107, 0.45),
+    rgba(255, 170, 50, 0.15) 35%,
+
+    transparent 70%
+  );
+}
+
+.dnd:hover::after {
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  background: radial-gradient(
+    circle,
+    transparent 35%,
+
+    rgba(255, 216, 107, 0.25),
+    transparent 70%
+  );
+
+  animation: runasMagicas 5s linear infinite;
+}
+
+@keyframes runasMagicas {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dnd:hover figure::after {
+  content: "✦  ✧  ✦";
+
+  position: absolute;
+
+  top: 80px;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: #ffd86b;
+
+  font-size: 28px;
+
+  letter-spacing: 25px;
+
+  animation: mana 3s infinite;
+}
+
+@keyframes mana {
+  0% {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-80px);
+  }
+}
+
+/*
+====================================================
+PATHFINDER
+PORTAL NATURAL
+====================================================
+*/
+
+.pathfinder {
+  --energia: #5cff8a;
+}
+
+.pathfinder:hover {
+  border-color: rgba(92, 255, 138, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(92, 255, 138, 0.45),
+    0 0 80px rgba(50, 255, 120, 0.25);
+}
+
+.pathfinder::before {
+  background: radial-gradient(
+    circle,
+    rgba(92, 255, 138, 0.35),
+    rgba(0, 180, 80, 0.15),
+    transparent 75%
+  );
+}
+
+.pathfinder:hover::after {
+  background: linear-gradient(90deg, transparent, #5cff8a, transparent);
+
+  animation: naturezaFluxo 2s infinite;
+}
+
+@keyframes naturezaFluxo {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.pathfinder:hover figure::after {
+  content: "❧  ✦  ❧";
+
+  position: absolute;
+
+  top: 90px;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: #8cffaa;
+
+  font-size: 24px;
+
+  animation: folhas 4s infinite;
+}
+
+@keyframes folhas {
+  0% {
+    transform: translateY(40px) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) rotate(180deg);
+
+    opacity: 0;
+  }
+}
+
+/*
+====================================================
+OLD
+GRIMÓRIO ANTIGO
+====================================================
+*/
+
+.old {
+  --energia: #e5a34b;
+}
+
+.old:hover {
+  border-color: rgba(229, 163, 75, 0.9);
+
+  box-shadow:
+    0 0 25px rgba(229, 163, 75, 0.4),
+    0 0 80px rgba(180, 100, 30, 0.25);
+}
+
+.old::before {
+  background: radial-gradient(
+    circle,
+    rgba(229, 163, 75, 0.35),
+    rgba(130, 70, 20, 0.15),
+    transparent 70%
+  );
+}
+
+.old:hover::after {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    rgba(229, 163, 75, 0.4),
+    transparent
+  );
+
+  animation: pergaminho 3s infinite;
+}
+
+@keyframes pergaminho {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/*
+====================================================
+VAMPIRO A MÁSCARA
+PORTAL DA ESCURIDÃO
+====================================================
+*/
+
+.vampiro {
+  --energia: #b30024;
+}
+
+.vampiro:hover {
+  border-color: rgba(179, 0, 36, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(179, 0, 36, 0.45),
+    0 0 90px rgba(100, 0, 20, 0.35);
+}
+
+.vampiro::before {
+  background: radial-gradient(
+    circle,
+    rgba(179, 0, 36, 0.45),
+    rgba(50, 0, 20, 0.25),
+    transparent 70%
+  );
+}
+
+.vampiro:hover::after {
+  height: 100%;
+
+  inset: 0;
+
+  background: radial-gradient(ellipse, rgba(255, 0, 60, 0.25), transparent 65%);
+
+  animation: nevoaVampiro 5s infinite;
+}
+
+@keyframes nevoaVampiro {
+  0% {
+    transform: scale(0.8);
+
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.2);
+
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(0.8);
+
+    opacity: 0.3;
+  }
+}
+
+.vampiro:hover figure::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 20%;
+
+  width: 3px;
+
+  height: 100px;
+
+  background: linear-gradient(#ff003c, transparent);
+
+  box-shadow:
+    40px 30px #ff003c,
+    90px 10px #ff003c;
+
+  animation: sangue 3s infinite;
+}
+
+@keyframes sangue {
+  0% {
+    transform: translateY(-40px);
+
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(80px);
+
+    opacity: 0;
+  }
+}
+
+/*
+====================================================
+TAGMAR
+PORTAL ANCESTRAL
+====================================================
+*/
+
+.tagmar {
+  --energia: #c89b55;
+}
+
+.tagmar:hover {
+  border-color: rgba(200, 155, 85, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(200, 155, 85, 0.45),
+    0 0 90px rgba(140, 90, 30, 0.25);
+}
+
+.tagmar::before {
+  background: radial-gradient(circle, rgba(200, 155, 85, 0.4), transparent 70%);
+}
+
+.tagmar:hover::after {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 155, 85, 0.5),
+    transparent
+  );
+
+  animation: antigo 4s infinite;
+}
+
+@keyframes antigo {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/*
+====================================================
+TORMENTA 20
+CORRUPÇÃO DO CAOS
+====================================================
+*/
+
+.tormenta {
+  --energia: #ff1744;
+}
+
+.tormenta:hover {
+  border-color: rgba(255, 23, 68, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(255, 23, 68, 0.5),
+    0 0 100px rgba(180, 0, 40, 0.35);
+}
+
+.tormenta::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 23, 68, 0.45),
+    rgba(130, 0, 30, 0.2),
+    transparent 70%
+  );
+}
+
+.tormenta:hover::after {
+  inset: 0;
+
+  height: 100%;
+
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+
+    rgba(255, 23, 68, 0.5),
+    transparent 60%
+  );
+
+  animation: caos 1.5s infinite;
+}
+
+@keyframes caos {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+/*
+====================================================
+3D&T
+ENERGIA DE ANIME
+====================================================
+*/
+
+.sistema-3det {
+  --energia: #ffea00;
+}
+
+.sistema-3det:hover {
+  border-color: rgba(255, 234, 0, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(255, 234, 0, 0.5),
+    0 0 100px rgba(255, 140, 0, 0.3);
+}
+
+.sistema-3det::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 234, 0, 0.45),
+    rgba(255, 120, 0, 0.15),
+    transparent 70%
+  );
+}
+
+.sistema-3det:hover::after {
+  background: conic-gradient(transparent, rgba(255, 234, 0, 0.7), transparent);
+
+  animation: poderAnime 1s infinite;
+}
+
+@keyframes poderAnime {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+====================================================
+7 MAR
+PORTAL OCEÂNICO
+====================================================
+*/
+
+.sistema-7mar {
+  --energia: #00bfff;
+}
+
+.sistema-7mar:hover {
+  border-color: rgba(0, 191, 255, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(0, 191, 255, 0.45),
+    0 0 90px rgba(0, 100, 255, 0.25);
+}
+
+.sistema-7mar::before {
+  background: radial-gradient(
+    circle,
+    rgba(0, 191, 255, 0.4),
+    rgba(0, 80, 160, 0.2),
+    transparent 70%
+  );
+}
+
+.sistema-7mar:hover::after {
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    rgba(0, 191, 255, 0.4),
+    transparent
+  );
+
+  animation: ondas 3s infinite;
+}
+
+@keyframes ondas {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 80px;
+  }
+}
+
+/*
+====================================================
+SACRAMENTO
+PORTAL RITUALÍSTICO
+====================================================
+*/
+
+.sacramento {
+  --energia: #d8b45a;
+}
+
+.sacramento:hover {
+  border-color: rgba(216, 180, 90, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(216, 180, 90, 0.45),
+    0 0 90px rgba(200, 130, 40, 0.25);
+}
+
+.sacramento::before {
+  background: radial-gradient(
+    circle,
+    rgba(216, 180, 90, 0.35),
+    rgba(120, 80, 20, 0.15),
+    transparent 70%
+  );
+}
+
+.sacramento:hover::after {
+  inset: 15px;
+
+  height: auto;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    transparent 40%,
+
+    rgba(216, 180, 90, 0.35),
+    transparent 65%
+  );
+
+  animation: ritual 8s linear infinite;
+}
+
+@keyframes ritual {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sacramento:hover figure::after {
+  content: "✦  ◇  ✧";
+
+  position: absolute;
+
+  top: 100px;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: #d8b45a;
+
+  font-size: 25px;
+
+  animation: simbolos 3s infinite;
+}
+
+@keyframes simbolos {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.4);
+  }
+}
+
+/*
+====================================================
+ASSIMILAÇÃO
+BIOMASSA ALIENÍGENA
+====================================================
+*/
+
+.assimilacao {
+  --energia: #75ff00;
+}
+
+.assimilacao:hover {
+  border-color: rgba(117, 255, 0, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(117, 255, 0, 0.45),
+    0 0 100px rgba(70, 255, 0, 0.25);
+}
+
+.assimilacao::before {
+  background: radial-gradient(
+    circle,
+    rgba(117, 255, 0, 0.4),
+    rgba(30, 120, 0, 0.2),
+    transparent 70%
+  );
+}
+
+.assimilacao:hover::after {
+  height: 100%;
+
+  inset: 0;
+
+  background: repeating-radial-gradient(
+    circle,
+    transparent,
+    rgba(117, 255, 0, 0.25) 15px,
+
+    transparent 30px
+  );
+
+  animation: mutacao 4s infinite;
+}
+
+@keyframes mutacao {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/*
+====================================================
+SISTEMA 6D6
+PORTAL PROBABILÍSTICO
+====================================================
+*/
+
+.sistema-6d6 {
+  --energia: #d65cff;
+}
+
+.sistema-6d6:hover {
+  border-color: rgba(214, 92, 255, 0.9);
+
+  box-shadow:
+    0 0 35px rgba(214, 92, 255, 0.45),
+    0 0 100px rgba(150, 0, 255, 0.25);
+}
+
+.sistema-6d6::before {
+  background: radial-gradient(
+    circle,
+    rgba(214, 92, 255, 0.4),
+    rgba(100, 0, 160, 0.2),
+    transparent 70%
+  );
+}
+
+.sistema-6d6:hover figure::after {
+  content: "1 2 3 4 5 6";
+
+  position: absolute;
+
+  top: 100px;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: #d65cff;
+
+  font-family: "JetBrains Mono";
+
+  letter-spacing: 15px;
+
+  animation: dados 3s infinite;
+}
+
+@keyframes dados {
+  0% {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-60px);
+  }
+}
+
+/*
+====================================================
+ELEMENTOS GERADOS PELO JAVASCRIPT
+====================================================
+*/
+
+.mira-portal {
+  position: absolute;
+
+  bottom: 10px;
+
+  left: 10px;
+
+  right: 10px;
+
+  padding: 10px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  border: 1px solid var(--energia);
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: white;
+
+  z-index: 20;
+
+  animation: aparecer 0.4s;
+}
+
+/*
+====================================================
+INFORMAÇÕES DO PORTAL
+====================================================
+*/
+
+.mira-portal span {
+  display: block;
+
+  font-size: 10px;
+
+  color: var(--energia);
+
+  letter-spacing: 1px;
+}
+
+.mira-portal strong {
+  display: block;
+
+  font-family: "Orbitron", sans-serif;
+
+  margin: 5px 0;
+
+  font-size: 13px;
+}
+
+.mira-portal small {
+  display: block;
+
+  font-size: 10px;
+
+  color: #d0d0d0;
+}
+
+/*
+====================================================
+PARTÍCULAS CRIADAS PELO JS
+====================================================
+*/
+
+.particula {
+  position: absolute;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  bottom: 0;
+
+  background: var(--energia);
+
+  opacity: 0.8;
+
+  pointer-events: none;
+
+  animation: subir 3s infinite;
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(0) scale(0.5);
+
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-250px) scale(1.5);
+
+    opacity: 0;
+  }
+}
+
+/*
+====================================================
+ENTRADA DO PORTAL
+====================================================
+*/
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/*
+====================================================
+TEXTO DOS CARDS
+====================================================
+*/
+
+.box h2 {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 15px;
+
+  color: white;
+
+  font-size: 1rem;
+
+  text-align: center;
+}
+
+.box p {
+  position: relative;
+
+  z-index: 5;
+
+  color: var(--cor-texto);
+
+  font-size: 0.85rem;
+
+  text-align: center;
+
+  line-height: 1.5;
+}
+
+/*
+====================================================
+JANELA DE INFORMAÇÃO DO UNIVERSO
+====================================================
+*/
+
+
+.janela-universo {
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+
+.janela-universo.ativa {
+
+    display:flex;
+
+}
+
+
+
+.painel-universo {
+
+    position:relative;
+
+    width:700px;
+
+    min-height:350px;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        rgba(10,25,45,.95),
+        rgba(3,8,18,.98)
+    );
+
+
+    border:
+    1px solid var(--cor-primaria);
+
+
+    box-shadow:
+
+    0 0 30px rgba(47,216,255,.5),
+
+    inset 0 0 40px rgba(47,216,255,.1);
+
+
+    padding:40px;
+
+    border-radius:12px;
+
+}
+
+
+
+.painel-universo h2 {
+
+    color:
+    var(--cor-primaria);
+
+    letter-spacing:3px;
+
+}
+
+
+
+.painel-universo p {
+
+    margin-top:25px;
+
+    color:
+    var(--cor-texto);
+
+    line-height:1.8;
+
+    font-family:
+    "JetBrains Mono";
+
+}
+
+/*
+====================================================
+JANELA DE INFORMAÇÃO DO UNIVERSO
+====================================================
+*/
+
+
+.janela-universo {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    rgba(0,0,0,.75);
+
+
+
+    backdrop-filter:blur(8px);
+
+
+
+    display:none;
+
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    z-index:999;
+
+
+
+}
+
+
+
+.janela-universo.ativa {
+
+
+    display:flex;
+
+
+}
+
+
+
+
+
+.painel-universo {
+
+
+    position:relative;
+
+
+
+    width:700px;
+
+
+
+    min-height:350px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(10,25,45,.95),
+
+        rgba(3,8,18,.98)
+
+    );
+
+
+
+    border:
+
+
+    1px solid var(--cor-primaria);
+
+
+
+    box-shadow:
+
+
+    0 0 30px rgba(47,216,255,.5),
+
+
+    inset 0 0 40px rgba(47,216,255,.1);
+
+
+
+    padding:40px;
+
+
+
+    border-radius:12px;
+
+
+
+    animation:
+
+
+    abrirPainel .4s;
+
+
+}
+
+
+
+
+.painel-universo h2 {
+
+
+    color:
+
+    var(--cor-primaria);
+
+
+
+    font-size:2rem;
+
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+
+.painel-universo p {
+
+
+    margin-top:25px;
+
+
+
+    color:
+
+    var(--cor-texto);
+
+
+
+    line-height:1.8;
+
+
+
+    font-family:
+
+    "JetBrains Mono";
+
+
+
+}
+
+
+
+
+
+.linha {
+
+
+    height:2px;
+
+
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        var(--cor-primaria),
+
+        transparent
+
+    );
+
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+
+.fechar {
+
+
+    position:absolute;
+
+
+    right:20px;
+
+
+    top:15px;
+
+
+
+    background:none;
+
+
+
+    border:1px solid var(--cor-primaria);
+
+
+
+    color:white;
+
+
+
+    padding:8px 15px;
+
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.fechar:hover {
+
+
+    background:
+
+    var(--cor-primaria);
+
+
+
+    color:black;
+
+
+}
+
+
+
+
+
+@keyframes abrirPainel {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        scale(.8)
+
+        translateY(30px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        scale(1)
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+.fechar {
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    background:none;
+
+    border:
+
+    1px solid var(--cor-primaria);
+
+    color:white;
+
+    padding:8px 15px;
+
+    cursor:pointer;
+
+}
+
+/*
+====================================================
+RESPONSIVIDADE
+====================================================
+*/
+
+/*
+====================================================
+TELAS GRANDES
+====================================================
+*/
+
+@media (min-width: 1400px) {
+  .container {
+    grid-template-columns: repeat(5, 250px);
+
+    gap: 50px 60px;
+  }
+}
+
+/*
+====================================================
+NOTEBOOK / TABLET GRANDE
+====================================================
+*/
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 250px);
+
+    gap: 45px;
+  }
+
+  header {
+    padding: 18px 35px;
   }
 
   #titulo {
-    font-size: 2rem;
+    font-size: 2.2rem;
 
     letter-spacing: 4px;
   }
@@ -214,15 +2315,33 @@ TABLET
   nav ul {
     gap: 25px;
   }
+}
 
-  nav a {
-    font-size: 0.95rem;
+/*
+====================================================
+TABLET
+====================================================
+*/
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 250px);
+
+    gap: 40px;
   }
 
-  .container {
-    width: 92%;
+  header {
+    flex-wrap: wrap;
 
-    padding: 30px;
+    gap: 20px;
+  }
+
+  #titulo {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
   }
 }
 
@@ -232,7 +2351,30 @@ CELULAR
 ====================================================
 */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
+  main {
+    padding-top: 30px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+
+    padding: 20px;
+  }
+
+  .box {
+    width: 280px;
+
+    min-height: 420px;
+  }
+
+  .box figure,
+  .box img {
+    height: 340px;
+  }
+
   header {
     flex-direction: column;
 
@@ -240,15 +2382,13 @@ CELULAR
 
     align-items: center;
 
-    gap: 18px;
-
     padding: 20px;
   }
 
   #titulo {
     text-align: center;
 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 
     letter-spacing: 3px;
   }
@@ -262,29 +2402,11 @@ CELULAR
 
     flex-wrap: wrap;
 
-    gap: 18px;
+    gap: 15px;
   }
 
   nav a {
-    font-size: 0.9rem;
-  }
-
-  .container {
-    width: 92%;
-
-    margin-top: 40px;
-
-    padding: 25px;
-  }
-
-  .container h2 {
-    font-size: 1.6rem;
-  }
-
-  .container p {
-    font-size: 1rem;
-
-    line-height: 1.7;
+    font-size: 0.8rem;
   }
 }
 
@@ -294,20 +2416,19 @@ CELULAR PEQUENO
 ====================================================
 */
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
+  .box {
+    width: 260px;
+  }
+
+  .box img,
+  .box figure {
+    height: 320px;
+  }
+
   #titulo {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 
     letter-spacing: 2px;
   }
-
-  nav ul {
-    gap: 12px;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-  }
 }
-
-

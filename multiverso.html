@@ -2,11 +2,16 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Multiverso</title>
+
     <link rel="stylesheet" href="css/multiverso.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;800&display=swap"
       rel="stylesheet"
@@ -15,8 +20,8 @@
 
   <body>
     <!-- ===========================
-          HEADER
-  ============================ -->
+HEADER
+=========================== -->
 
     <header>
       <h1 id="titulo">Agência IMMAGINUM</h1>
@@ -39,35 +44,269 @@
     </header>
 
     <!-- ===========================
-          CONTEÚDO
-  ============================ -->
+CONTEÚDO
+=========================== -->
 
     <main>
       <div class="container">
-        <div class="box">
+        <div
+          class="box cthulhu"
+          onclick="
+            abrirUniverso(
+              'CALL OF CTHULHU',
+              'Um universo de horror cósmico onde investigadores enfrentam mistérios antigos, criaturas além da compreensão humana e forças que desafiam a realidade.',
+            )
+          "
+        >
           <figure>
-            <img
-              src="img/images.jpg"
-              width="10%"
-              loading="lazy"
-              alt="Livro de RPG Call of Cthulhu"
-            />
+            <img src="img/coc.jpg" loading="lazy" />
+
             <figcaption>Call of Cthulhu</figcaption>
           </figure>
         </div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+
+        <div
+          class="box cyberpunk"
+          onclick="
+            abrirUniverso(
+              'CYBERPUNK RED',
+              'Um futuro distópico dominado por megacorporações, tecnologia extrema e pessoas tentando sobreviver em uma sociedade quebrada.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/cyberpunk.jpg" loading="lazy" />
+
+            <figcaption>Cyberpunk Red</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box dnd"
+          onclick="
+            abrirUniverso(
+              'DUNGEONS & DRAGONS',
+              'Um universo de fantasia onde heróis exploram masmorras, enfrentam monstros e descobrem poderes mágicos.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/d&d.jpg" loading="lazy" />
+
+            <figcaption>Dungeons & Dragons</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box ordem"
+          onclick="
+            abrirUniverso(
+              'ORDEM PARANORMAL',
+              'Um mundo onde agentes investigam fenômenos paranormais e enfrentam forças desconhecidas vindas do Outro Lado.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/ordem.jpg" loading="lazy" />
+
+            <figcaption>Ordem Paranormal</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box kuro"
+          onclick="
+            abrirUniverso(
+              'KURO',
+              'Um cenário cyberpunk sobrenatural onde tecnologia avançada encontra espíritos e fenômenos misteriosos.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/kuro.jpg" loading="lazy" />
+
+            <figcaption>Kuro</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box pathfinder"
+          onclick="
+            abrirUniverso(
+              'PATHFINDER',
+              'Um mundo de fantasia cheio de magia, criaturas lendárias, guerras e aventuras épicas.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/pathfinder.jpg" loading="lazy" />
+
+            <figcaption>Pathfinder</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box assimilacao"
+          onclick="
+            abrirUniverso(
+              'ASSIMILAÇÃO',
+              'Uma realidade onde forças alienígenas e mutações transformam tudo ao seu redor.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/assimilacao.jpg" loading="lazy" />
+
+            <figcaption>Assimilação</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box vampiro"
+          onclick="
+            abrirUniverso(
+              'VAMPIRO A MÁSCARA',
+              'Um mundo sombrio onde vampiros escondem sua existência enquanto lutam contra sua própria natureza.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/vampiro.jpg" loading="lazy" />
+
+            <figcaption>Vampiro A Máscara</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box old"
+          onclick="
+            abrirUniverso(
+              'OLD DRAGON',
+              'Um RPG inspirado nos clássicos da fantasia medieval, com aventuras simples e perigosas.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/olddragon.jpg" loading="lazy" />
+
+            <figcaption>Old Dragon</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box tormenta"
+          onclick="
+            abrirUniverso(
+              'TORMENTA 20',
+              'Um universo de fantasia brasileira cheio de magia, guerras, deuses e ameaças sobrenaturais.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/tormenta.jpg" loading="lazy" />
+
+            <figcaption>Tormenta 20</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box sistema-3det"
+          onclick="
+            abrirUniverso(
+              '3D&T',
+              'Um sistema inspirado em animes, videogames e histórias de ação com poderes exagerados.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/3det.png" loading="lazy" />
+
+            <figcaption>3D&T</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box sistema-7mar"
+          onclick="
+            abrirUniverso(
+              '7 MAR',
+              'Um cenário de aventura marítima com piratas, exploração e intrigas entre grandes nações.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/7mar.jpg" loading="lazy" />
+
+            <figcaption>7 Mar</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box tagmar"
+          onclick="
+            abrirUniverso(
+              'TAGMAR',
+              'Um dos primeiros RPGs brasileiros, com fantasia medieval e grandes aventuras.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/tagmar.png" loading="lazy" />
+
+            <figcaption>Tagmar</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box sacramento"
+          onclick="
+            abrirUniverso(
+              'SACRAMENTO',
+              'Um universo de mistério e forças ocultas envolvendo rituais e acontecimentos sobrenaturais.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/sacramento.jpg" loading="lazy" />
+
+            <figcaption>Sacramento</figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="box sistema-6d6"
+          onclick="
+            abrirUniverso(
+              'SISTEMA 6D6',
+              'Um sistema baseado em narrativa e possibilidades onde escolhas alteram o destino dos personagens.',
+            )
+          "
+        >
+          <figure>
+            <img src="img/6d6.png" loading="lazy" />
+
+            <figcaption>Sistema 6D6</figcaption>
+          </figure>
+        </div>
       </div>
     </main>
+
+    <!-- ===========================
+JANELA MIRA
+=========================== -->
+
+    <div class="janela-universo" id="janelaUniverso">
+      <div class="painel-universo">
+        <button class="fechar" onclick="fecharUniverso()">X</button>
+
+        <h2 id="tituloUniverso">UNIVERSO</h2>
+
+        <div class="linha"></div>
+
+        <p id="textoUniverso">Aguardando dados dimensionais...</p>
+      </div>
+    </div>
+
+    <script src="js/multiverso.js"></script>
   </body>
 </html>
