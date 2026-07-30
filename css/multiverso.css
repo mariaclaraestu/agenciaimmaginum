@@ -1,165 +1,311 @@
+/*
+====================================================
+RESET
+====================================================
+*/
+
 * {
-  padding: 0px;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/*
+====================================================
+VARIÁVEIS
+====================================================
+*/
+
 :root {
   --cor-primaria: #2fd8ff;
-  --cor-secundaria: ;
-  --cor-destaque: #0b111f;
+  --cor-secundaria: #27d8ff;
+
   --cor-fundo: #05060b;
-  --aviso-btncor: #27d8ff;
+
+  --cor-header: #0b111f;
+
+  --cor-box: rgba(8, 16, 28, 0.92);
+
+  --cor-texto: #d0d0d0;
+
+  --cor-ok: #00ff9d;
+
+  --cor-barra: #2fd8ff;
+
+  --sombra-neon:
+    0 0 10px rgba(47, 216, 255, 0.45), 0 0 30px rgba(47, 216, 255, 0.18);
 }
+
+/*
+====================================================
+BODY
+====================================================
+*/
 
 body {
-  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%) no-repeat fixed;
+  background: radial-gradient(circle at top, #1b2c5c 0%, #05060b 65%);
+
   color: white;
+
   font-family: "Orbitron", sans-serif;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
 }
+
+/*
+====================================================
+MAIN
+====================================================
+*/
+
+main {
+  min-height: 100vh;
+}
+
+
+/*
+====================================================
+HEADER
+====================================================
+*/
 
 header {
- width: 100%;
-  background-color: #0b111f;
-  min-height: px;
-  padding: 0 100px;
+  width: 100%;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
-  gap: 30px;
-  border-bottom: 1px solid var(--cor-primaria);
+
+  padding: 18px 6%;
+
+  background: linear-gradient(90deg, #080d18, #0b111f, #080d18);
+
+  border-bottom: 1px solid rgba(47, 216, 255, 0.25);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
 }
 
-#titulo {
-  font-size: 45px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  position: relative;
-  display: inline-block;
+/*
+====================================================
+LOGO / TÍTULO
+====================================================
+*/
 
-  color: #1e293b;
+#titulo {
+  color: #172435;
+
+  font-size: 2.6rem;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 6px;
+
+  line-height: 1;
 
   -webkit-text-stroke: 1px var(--cor-primaria);
 
   text-shadow:
-    3px 0px 0px rgba(0, 255, 255, 0.4),
-    -3px 0px 0px rgba(255, 0, 127, 0.3),
-    0px 0px 10px rgba(47, 216, 255, 0.6);
+    3px 0 0 rgba(0, 255, 255, 0.35),
+    -3px 0 0 rgba(255, 0, 120, 0.25),
+    0 0 15px rgba(47, 216, 255, 0.7);
 }
+
+/*
+====================================================
+MENU
+====================================================
+*/
 
 nav ul {
   display: flex;
-  gap: 60px;
+
+  align-items: center;
+
   list-style: none;
-  font-size: 23px;
+
+  gap: 45px;
+}
+
+nav li {
+  list-style: none;
 }
 
 nav a {
+  position: relative;
+
   color: white;
+
   text-decoration: none;
+
+  font-size: 1rem;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
 }
+
+/*
+====================================================
+EFEITO HOVER DO MENU
+====================================================
+*/
 
 nav a:hover {
-  color: var(--aviso-btncor);
+  color: var(--cor-primaria);
 }
 
-main {
-  background: radial-gradient(circle at top, #1c2c5f 0%, #05060b 60%);
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--cor-primaria);
+
+  box-shadow: 0 0 8px var(--cor-primaria);
+
+  transition: 0.3s;
 }
 
+nav a:hover::after {
+  width: 100%;
+}
 
 /*
-==============
-    CONTAINER
-==============
+====================================================
+TABLET
+====================================================
 */
 
-.container {
-  width: 90%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-
-/*
-=====================
-    RESPONSIVIDADE
-=====================
-*/
-
-
-/* TABLET */
-@media (max-width: 900px) {
-
+@media (max-width: 1024px) {
   header {
-    padding: 20px; /* Diminuído para dar mais espaço nas laterais */
-    gap: 15px;     /* Diminuído o espaço entre o logo e o menu */
+    padding: 18px 30px;
+
+    gap: 20px;
   }
 
   #titulo {
-    font-size: 24px;       /* Letras do título menores para caber na linha */
-    letter-spacing: 3px;   /* Letras um pouco mais juntas */
-    white-space: nowrap;
+    font-size: 2rem;
+
+    letter-spacing: 4px;
   }
 
   nav ul {
-    gap: 20px;       /* Espaço menor entre um botão e outro */
-    font-size: 16px; /* Letras do menu um pouco menores */
+    gap: 25px;
   }
 
-  .box {
-    width: 80%;
-    padding: 35px;
+  nav a {
+    font-size: 0.95rem;
   }
 
+  .container {
+    width: 92%;
+
+    padding: 30px;
+  }
 }
 
+/*
+====================================================
+CELULAR
+====================================================
+*/
 
-/* CELULAR */
-@media (max-width: 600px) {
-
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    justify-content: center;
-    padding: 25px 20px;
-    gap: 30px;
-  }
 
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+  }
 
   #titulo {
-font-size: 22px;
-  letter-spacing: 3px;
-  text-align: center;
-  white-space: nowrap;
+    text-align: center;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 3px;
   }
 
-
-  nav ul {
-    gap: 20px;
-    font-size: 15px;
-  }
-
-
-  .box {
-    width: 90%;
-    padding: 25px;
-  }
-
-
-  .box h2 {
-    font-size: 20px;
-  }
-
-
-  .box p {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-
-
-  button {
+  nav {
     width: 100%;
   }
 
+  nav ul {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 92%;
+
+    margin-top: 40px;
+
+    padding: 25px;
+  }
+
+  .container h2 {
+    font-size: 1.6rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
+}
+
+/*
+====================================================
+CELULAR PEQUENO
+====================================================
+*/
+
+@media (max-width: 480px) {
+  #titulo {
+    font-size: 1.4rem;
+
+    letter-spacing: 2px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
 }
