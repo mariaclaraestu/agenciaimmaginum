@@ -374,3 +374,425 @@ CELULAR PEQUENO
     font-size: 0.8rem;
   }
 }
+
+/*
+====================================================
+PÁGINA DE LOGS
+====================================================
+*/
+
+.logs-topo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.logs-topo h2 {
+  margin-bottom: 18px;
+}
+
+.logs-topo p {
+  max-width: 850px;
+  margin: auto;
+}
+
+/*
+====================================================
+PESQUISA
+====================================================
+*/
+
+.painel-pesquisa {
+  margin-bottom: 45px;
+
+  padding: 28px;
+
+  background: rgba(5, 12, 22, 0.75);
+
+  border: 1px solid rgba(47, 216, 255, 0.15);
+
+  border-radius: 12px;
+}
+
+.painel-pesquisa input {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  background: #08111f;
+
+  color: white;
+
+  border: 1px solid rgba(47, 216, 255, 0.25);
+
+  border-radius: 8px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: .95rem;
+
+  outline: none;
+
+  transition: .3s;
+}
+
+.painel-pesquisa input:focus {
+  border-color: var(--cor-primaria);
+
+  box-shadow: 0 0 12px rgba(47,216,255,.25);
+}
+
+.painel-pesquisa input::placeholder {
+  color: #8f9ab0;
+}
+
+.filtros {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+.filtros select {
+  padding: 14px;
+
+  background: #08111f;
+
+  color: white;
+
+  border: 1px solid rgba(47,216,255,.25);
+
+  border-radius: 8px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.filtros select:focus {
+  border-color: var(--cor-primaria);
+}
+
+/*
+====================================================
+LISTA
+====================================================
+*/
+
+.lista-logs {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+/*
+====================================================
+CARD
+====================================================
+*/
+
+.log-card {
+  background: rgba(6, 14, 24, .88);
+
+  border: 1px solid rgba(47,216,255,.18);
+
+  border-left: 4px solid var(--cor-primaria);
+
+  border-radius: 12px;
+
+  padding: 28px;
+
+  transition: .25s;
+}
+
+.log-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(47,216,255,.4);
+
+  box-shadow: 0 0 22px rgba(47,216,255,.12);
+}
+
+.log-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.log-id {
+  color: var(--cor-primaria);
+
+  font-size: .95rem;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-weight: bold;
+}
+
+.log-card h3 {
+  color: white;
+
+  margin-bottom: 18px;
+
+  font-size: 1.45rem;
+}
+
+.informacoes {
+  display: flex;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 25px;
+
+  color: #91b7d4;
+
+  font-size: .9rem;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+/*
+====================================================
+STATUS DOS LOGS
+====================================================
+*/
+
+.status {
+  padding: 6px 14px;
+
+  border-radius: 50px;
+
+  font-size: .75rem;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+.status.arquivado {
+  color: #00ff9d;
+
+  background: rgba(0,255,157,.12);
+
+  border: 1px solid rgba(0,255,157,.35);
+}
+
+.status.revisado {
+  color: #ffd54a;
+
+  background: rgba(255,213,74,.12);
+
+  border: 1px solid rgba(255,213,74,.35);
+}
+
+.status.restrito {
+  color: #ff6262;
+
+  background: rgba(255,98,98,.12);
+
+  border: 1px solid rgba(255,98,98,.35);
+}
+
+/*
+====================================================
+CONTEÚDO DOS LOGS
+====================================================
+*/
+
+.conteudo-log {
+  margin-top: 18px;
+}
+
+.conteudo-log p {
+  margin-bottom: 18px;
+
+  line-height: 1.8;
+
+  color: #d8dee9;
+
+  font-size: .96rem;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+.conteudo-log h4 {
+  color: var(--cor-primaria);
+
+  margin: 18px 0 12px;
+
+  font-size: 1rem;
+}
+
+.conteudo-log strong {
+  color: white;
+}
+
+.conteudo-log ul {
+  margin: 18px 0 22px 22px;
+}
+
+.conteudo-log li {
+  margin-bottom: 10px;
+
+  color: #d6dce8;
+
+  line-height: 1.7;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+.conteudo-log hr {
+  margin: 28px 0;
+
+  border: none;
+
+  height: 1px;
+
+  background: rgba(47,216,255,.18);
+}
+
+/*
+====================================================
+ARQUIVOS RELACIONADOS
+====================================================
+*/
+
+.relacionados {
+  margin-top: 28px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(47,216,255,.12);
+}
+
+.relacionados strong {
+  display: block;
+
+  color: var(--cor-primaria);
+
+  margin-bottom: 12px;
+}
+
+.relacionados ul {
+  margin-left: 20px;
+}
+
+.relacionados li {
+  color: #9ec9e6;
+}
+
+/*
+====================================================
+TEXTOS ESPECIAIS
+====================================================
+*/
+
+.censurado {
+  color: #ff6262;
+
+  letter-spacing: 2px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  word-break: break-all;
+}
+
+.acesso-negado {
+  color: #ff4040;
+
+  font-weight: bold;
+
+  font-size: 1.2rem;
+
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 8px rgba(255,0,0,.4);
+}
+
+/*
+====================================================
+RESPONSIVIDADE
+====================================================
+*/
+
+@media (max-width:900px){
+
+  .filtros{
+    grid-template-columns:1fr;
+  }
+
+  .log-header{
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .informacoes{
+    flex-direction:column;
+
+    gap:10px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .painel-pesquisa{
+    padding:20px;
+  }
+
+  .log-card{
+    padding:22px;
+  }
+
+  .log-card h3{
+    font-size:1.2rem;
+  }
+
+  .conteudo-log p,
+  .conteudo-log li{
+    font-size:.9rem;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .painel-pesquisa{
+    padding:16px;
+  }
+
+  .painel-pesquisa input,
+  .filtros select{
+    font-size:.85rem;
+  }
+
+  .log-card{
+    padding:18px;
+  }
+
+  .status{
+    font-size:.68rem;
+  }
+
+}
