@@ -73,29 +73,10 @@ CONTAINER PRINCIPAL
 .container {
   width: min(92%, 1200px);
 
-  margin: auto;
-
-  margin-top: 70px;
-
-  padding: 40px;
+  margin: 70px auto;
 
   position: relative;
-
-  background: linear-gradient(
-    180deg,
-    rgba(16, 26, 48, 0.88),
-    rgba(8, 14, 26, 0.94)
-  );
-
-  border: 1px solid rgba(47, 216, 255, 0.18);
-
-  border-radius: 10px;
-
-  box-shadow:
-    0 0 30px rgba(47, 216, 255, 0.05),
-    inset 0 0 20px rgba(47, 216, 255, 0.03);
 }
-
 /*
 ====================================================
 TEXTOS DO CONTAINER
@@ -845,7 +826,193 @@ PAINEL PRINCIPAL MIRA
 ====================================================
 */
 
+/*
+====================================================
+CONTEÚDO PRINCIPAL
+====================================================
+*/
 
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 26, 48, 0.88),
+    rgba(8, 14, 26, 0.94)
+  );
+
+  border: 1px solid rgba(47, 216, 255, 0.18);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 30px rgba(47, 216, 255, 0.05),
+    inset 0 0 20px rgba(47, 216, 255, 0.03);
+}
+
+/*
+====================================================
+CAIXAS DE CONTEÚDO
+====================================================
+*/
+
+.bloco {
+  position: relative;
+
+  padding: 35px;
+
+  background: rgba(7, 14, 25, 0.92);
+
+  border: 1px solid rgba(47, 216, 255, 0.18);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 25px rgba(47, 216, 255, 0.05),
+    inset 0 0 20px rgba(47, 216, 255, 0.02);
+
+  transition:
+    0.35s,
+    transform 0.35s;
+
+  opacity: 0;
+
+  transform: translateY(60px);
+}
+
+/*
+====================================================
+LINHA SUPERIOR
+====================================================
+*/
+
+.bloco::before {
+  content: "ARQUIVO IMMAGINUM";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  padding: 12px 25px;
+
+  background: rgba(47, 216, 255, 0.08);
+
+  border-bottom: 1px solid rgba(47, 216, 255, 0.18);
+
+  color: var(--cor-primaria);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+/*
+====================================================
+TÍTULOS
+====================================================
+*/
+
+.bloco h2 {
+  margin-top: 30px;
+
+  margin-bottom: 20px;
+
+  color: var(--cor-primaria);
+
+  font-size: 2rem;
+
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 10px rgba(47, 216, 255, 0.45);
+}
+
+/*
+====================================================
+TEXTOS
+====================================================
+*/
+
+.bloco p {
+  color: #d7e0ea;
+
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.4px;
+
+  margin-bottom: 18px;
+}
+
+.bloco p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+====================================================
+HOVER
+====================================================
+*/
+
+.bloco:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(47, 216, 255, 0.45);
+
+  box-shadow:
+    0 0 35px rgba(47, 216, 255, 0.18),
+    inset 0 0 20px rgba(47, 216, 255, 0.04);
+}
+
+/*
+====================================================
+ANIMAÇÃO AO ENTRAR NA TELA
+====================================================
+*/
+
+.bloco.aparecer {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.mira {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 40px;
+
+    margin-bottom: 45px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(16, 26, 48, 0.88),
+        rgba(8, 14, 26, 0.94)
+    );
+
+    border: 1px solid rgba(47, 216, 255, 0.18);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 30px rgba(47, 216, 255, 0.05),
+        inset 0 0 20px rgba(47, 216, 255, 0.03);
+
+}
 
 /*
 ====================================================
@@ -1001,6 +1168,7 @@ RESPONSIVIDADE MIRA
 @media (max-width: 768px) {
   .mira {
     padding: 25px;
+    margin-bottom: 40px;
   }
 
   .mira h2 {
@@ -1037,6 +1205,7 @@ TELAS PEQUENAS
 @media (max-width: 480px) {
   .mira {
     padding: 20px;
+    margin-bottom: 40px;
   }
 
   .mira::before {
