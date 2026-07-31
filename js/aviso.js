@@ -161,24 +161,19 @@ function esperar(ms) {
 
 const blocos = document.querySelectorAll(".bloco");
 
-const observador = new IntersectionObserver((entradas) => {
-
+const observador = new IntersectionObserver(
+  (entradas) => {
     entradas.forEach((entrada) => {
-
-        if (entrada.isIntersecting) {
-
-            entrada.target.classList.add("aparecer");
-
-        }
-
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("aparecer");
+      }
     });
-
-}, {
-    threshold: 0.15
-});
+  },
+  {
+    threshold: 0.15,
+  },
+);
 
 blocos.forEach((bloco) => {
-
-    observador.observe(bloco);
-
+  observador.observe(bloco);
 });

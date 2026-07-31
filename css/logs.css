@@ -428,17 +428,17 @@ PESQUISA
 
   font-family: "JetBrains Mono", monospace;
 
-  font-size: .95rem;
+  font-size: 0.95rem;
 
   outline: none;
 
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .painel-pesquisa input:focus {
   border-color: var(--cor-primaria);
 
-  box-shadow: 0 0 12px rgba(47,216,255,.25);
+  box-shadow: 0 0 12px rgba(47, 216, 255, 0.25);
 }
 
 .painel-pesquisa input::placeholder {
@@ -448,7 +448,7 @@ PESQUISA
 .filtros {
   display: grid;
 
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 18px;
 
@@ -462,7 +462,7 @@ PESQUISA
 
   color: white;
 
-  border: 1px solid rgba(47,216,255,.25);
+  border: 1px solid rgba(47, 216, 255, 0.25);
 
   border-radius: 8px;
 
@@ -498,9 +498,9 @@ CARD
 */
 
 .log-card {
-  background: rgba(6, 14, 24, .88);
+  background: rgba(6, 14, 24, 0.88);
 
-  border: 1px solid rgba(47,216,255,.18);
+  border: 1px solid rgba(47, 216, 255, 0.18);
 
   border-left: 4px solid var(--cor-primaria);
 
@@ -508,15 +508,15 @@ CARD
 
   padding: 28px;
 
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .log-card:hover {
   transform: translateY(-4px);
 
-  border-color: rgba(47,216,255,.4);
+  border-color: rgba(47, 216, 255, 0.4);
 
-  box-shadow: 0 0 22px rgba(47,216,255,.12);
+  box-shadow: 0 0 22px rgba(47, 216, 255, 0.12);
 }
 
 .log-header {
@@ -536,7 +536,7 @@ CARD
 .log-id {
   color: var(--cor-primaria);
 
-  font-size: .95rem;
+  font-size: 0.95rem;
 
   font-family: "JetBrains Mono", monospace;
 
@@ -562,7 +562,7 @@ CARD
 
   color: #91b7d4;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   font-family: "JetBrains Mono", monospace;
 }
@@ -578,7 +578,7 @@ STATUS DOS LOGS
 
   border-radius: 50px;
 
-  font-size: .75rem;
+  font-size: 0.75rem;
 
   font-weight: bold;
 
@@ -592,25 +592,25 @@ STATUS DOS LOGS
 .status.arquivado {
   color: #00ff9d;
 
-  background: rgba(0,255,157,.12);
+  background: rgba(0, 255, 157, 0.12);
 
-  border: 1px solid rgba(0,255,157,.35);
+  border: 1px solid rgba(0, 255, 157, 0.35);
 }
 
 .status.revisado {
   color: #ffd54a;
 
-  background: rgba(255,213,74,.12);
+  background: rgba(255, 213, 74, 0.12);
 
-  border: 1px solid rgba(255,213,74,.35);
+  border: 1px solid rgba(255, 213, 74, 0.35);
 }
 
 .status.restrito {
   color: #ff6262;
 
-  background: rgba(255,98,98,.12);
+  background: rgba(255, 98, 98, 0.12);
 
-  border: 1px solid rgba(255,98,98,.35);
+  border: 1px solid rgba(255, 98, 98, 0.35);
 }
 
 /*
@@ -630,7 +630,7 @@ CONTEÚDO DOS LOGS
 
   color: #d8dee9;
 
-  font-size: .96rem;
+  font-size: 0.96rem;
 
   font-family: "JetBrains Mono", monospace;
 }
@@ -668,7 +668,7 @@ CONTEÚDO DOS LOGS
 
   height: 1px;
 
-  background: rgba(47,216,255,.18);
+  background: rgba(47, 216, 255, 0.18);
 }
 
 /*
@@ -682,7 +682,7 @@ ARQUIVOS RELACIONADOS
 
   padding-top: 20px;
 
-  border-top: 1px solid rgba(47,216,255,.12);
+  border-top: 1px solid rgba(47, 216, 255, 0.12);
 }
 
 .relacionados strong {
@@ -726,7 +726,7 @@ TEXTOS ESPECIAIS
 
   letter-spacing: 2px;
 
-  text-shadow: 0 0 8px rgba(255,0,0,.4);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
 /*
@@ -735,64 +735,58 @@ RESPONSIVIDADE
 ====================================================
 */
 
-@media (max-width:900px){
-
-  .filtros{
-    grid-template-columns:1fr;
+@media (max-width: 900px) {
+  .filtros {
+    grid-template-columns: 1fr;
   }
 
-  .log-header{
-    flex-direction:column;
+  .log-header {
+    flex-direction: column;
 
-    align-items:flex-start;
+    align-items: flex-start;
   }
 
-  .informacoes{
-    flex-direction:column;
+  .informacoes {
+    flex-direction: column;
 
-    gap:10px;
+    gap: 10px;
   }
-
 }
 
-@media (max-width:768px){
-
-  .painel-pesquisa{
-    padding:20px;
+@media (max-width: 768px) {
+  .painel-pesquisa {
+    padding: 20px;
   }
 
-  .log-card{
-    padding:22px;
+  .log-card {
+    padding: 22px;
   }
 
-  .log-card h3{
-    font-size:1.2rem;
+  .log-card h3 {
+    font-size: 1.2rem;
   }
 
   .conteudo-log p,
-  .conteudo-log li{
-    font-size:.9rem;
+  .conteudo-log li {
+    font-size: 0.9rem;
   }
-
 }
 
-@media (max-width:480px){
-
-  .painel-pesquisa{
-    padding:16px;
+@media (max-width: 480px) {
+  .painel-pesquisa {
+    padding: 16px;
   }
 
   .painel-pesquisa input,
-  .filtros select{
-    font-size:.85rem;
+  .filtros select {
+    font-size: 0.85rem;
   }
 
-  .log-card{
-    padding:18px;
+  .log-card {
+    padding: 18px;
   }
 
-  .status{
-    font-size:.68rem;
+  .status {
+    font-size: 0.68rem;
   }
-
 }

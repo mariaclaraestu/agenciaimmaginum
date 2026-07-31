@@ -1858,96 +1858,66 @@ JANELA DE INFORMAÇÃO DO UNIVERSO
 ====================================================
 */
 
-
 .janela-universo {
+  position: fixed;
 
-    position:fixed;
+  inset: 0;
 
-    inset:0;
+  background: rgba(0, 0, 0, 0.75);
 
-    background:
-    rgba(0,0,0,.75);
+  backdrop-filter: blur(8px);
 
-    backdrop-filter:blur(8px);
+  display: none;
 
-    display:none;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
-
-    z-index:999;
-
+  z-index: 999;
 }
-
 
 .janela-universo.ativa {
-
-    display:flex;
-
+  display: flex;
 }
-
-
 
 .painel-universo {
+  position: relative;
 
-    position:relative;
+  width: 700px;
 
-    width:700px;
+  min-height: 350px;
 
-    min-height:350px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 45, 0.95),
+    rgba(3, 8, 18, 0.98)
+  );
 
-    background:
+  border: 1px solid var(--cor-primaria);
 
-    linear-gradient(
-        180deg,
-        rgba(10,25,45,.95),
-        rgba(3,8,18,.98)
-    );
+  box-shadow:
+    0 0 30px rgba(47, 216, 255, 0.5),
+    inset 0 0 40px rgba(47, 216, 255, 0.1);
 
+  padding: 40px;
 
-    border:
-    1px solid var(--cor-primaria);
-
-
-    box-shadow:
-
-    0 0 30px rgba(47,216,255,.5),
-
-    inset 0 0 40px rgba(47,216,255,.1);
-
-
-    padding:40px;
-
-    border-radius:12px;
-
+  border-radius: 12px;
 }
-
-
 
 .painel-universo h2 {
+  color: var(--cor-primaria);
 
-    color:
-    var(--cor-primaria);
-
-    letter-spacing:3px;
-
+  letter-spacing: 3px;
 }
 
-
-
 .painel-universo p {
+  margin-top: 25px;
 
-    margin-top:25px;
+  color: var(--cor-texto);
 
-    color:
-    var(--cor-texto);
+  line-height: 1.8;
 
-    line-height:1.8;
-
-    font-family:
-    "JetBrains Mono";
-
+  font-family: "JetBrains Mono";
 }
 
 /*
@@ -1956,317 +1926,139 @@ JANELA DE INFORMAÇÃO DO UNIVERSO
 ====================================================
 */
 
-
 .janela-universo {
+  position: fixed;
 
+  inset: 0;
 
-    position:fixed;
+  background: rgba(0, 0, 0, 0.75);
 
+  backdrop-filter: blur(8px);
 
-    inset:0;
+  display: none;
 
+  justify-content: center;
 
-    background:
+  align-items: center;
 
-    rgba(0,0,0,.75);
-
-
-
-    backdrop-filter:blur(8px);
-
-
-
-    display:none;
-
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-
-    z-index:999;
-
-
-
+  z-index: 999;
 }
-
-
 
 .janela-universo.ativa {
-
-
-    display:flex;
-
-
+  display: flex;
 }
-
-
-
-
 
 .painel-universo {
+  position: relative;
 
+  width: 700px;
 
-    position:relative;
+  min-height: 350px;
 
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 45, 0.95),
+    rgba(3, 8, 18, 0.98)
+  );
 
+  border: 1px solid var(--cor-primaria);
 
-    width:700px;
+  box-shadow:
+    0 0 30px rgba(47, 216, 255, 0.5),
+    inset 0 0 40px rgba(47, 216, 255, 0.1);
 
+  padding: 40px;
 
+  border-radius: 12px;
 
-    min-height:350px;
-
-
-
-    background:
-
-
-    linear-gradient(
-
-        180deg,
-
-        rgba(10,25,45,.95),
-
-        rgba(3,8,18,.98)
-
-    );
-
-
-
-    border:
-
-
-    1px solid var(--cor-primaria);
-
-
-
-    box-shadow:
-
-
-    0 0 30px rgba(47,216,255,.5),
-
-
-    inset 0 0 40px rgba(47,216,255,.1);
-
-
-
-    padding:40px;
-
-
-
-    border-radius:12px;
-
-
-
-    animation:
-
-
-    abrirPainel .4s;
-
-
+  animation: abrirPainel 0.4s;
 }
-
-
-
 
 .painel-universo h2 {
+  color: var(--cor-primaria);
 
+  font-size: 2rem;
 
-    color:
-
-    var(--cor-primaria);
-
-
-
-    font-size:2rem;
-
-
-
-    letter-spacing:3px;
-
-
+  letter-spacing: 3px;
 }
-
-
-
 
 .painel-universo p {
+  margin-top: 25px;
 
+  color: var(--cor-texto);
 
-    margin-top:25px;
+  line-height: 1.8;
 
-
-
-    color:
-
-    var(--cor-texto);
-
-
-
-    line-height:1.8;
-
-
-
-    font-family:
-
-    "JetBrains Mono";
-
-
-
+  font-family: "JetBrains Mono";
 }
-
-
-
-
 
 .linha {
+  height: 2px;
 
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cor-primaria),
+    transparent
+  );
 
-    height:2px;
-
-
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        var(--cor-primaria),
-
-        transparent
-
-    );
-
-
-
-    margin-top:15px;
-
-
+  margin-top: 15px;
 }
-
-
-
-
 
 .fechar {
+  position: absolute;
 
+  right: 20px;
 
-    position:absolute;
+  top: 15px;
 
+  background: none;
 
-    right:20px;
+  border: 1px solid var(--cor-primaria);
 
+  color: white;
 
-    top:15px;
+  padding: 8px 15px;
 
-
-
-    background:none;
-
-
-
-    border:1px solid var(--cor-primaria);
-
-
-
-    color:white;
-
-
-
-    padding:8px 15px;
-
-
-
-    cursor:pointer;
-
-
+  cursor: pointer;
 }
-
-
 
 .fechar:hover {
+  background: var(--cor-primaria);
 
-
-    background:
-
-    var(--cor-primaria);
-
-
-
-    color:black;
-
-
+  color: black;
 }
 
-
-
-
-
 @keyframes abrirPainel {
+  from {
+    opacity: 0;
 
+    transform: scale(0.8) translateY(30px);
+  }
 
-    from {
+  to {
+    opacity: 1;
 
-
-        opacity:0;
-
-
-        transform:
-
-        scale(.8)
-
-        translateY(30px);
-
-
-    }
-
-
-
-    to {
-
-
-        opacity:1;
-
-
-        transform:
-
-        scale(1)
-
-        translateY(0);
-
-
-    }
-
-
+    transform: scale(1) translateY(0);
+  }
 }
 
 .fechar {
+  position: absolute;
 
-    position:absolute;
+  right: 20px;
 
-    right:20px;
+  top: 15px;
 
-    top:15px;
+  background: none;
 
-    background:none;
+  border: 1px solid var(--cor-primaria);
 
-    border:
+  color: white;
 
-    1px solid var(--cor-primaria);
+  padding: 8px 15px;
 
-    color:white;
-
-    padding:8px 15px;
-
-    cursor:pointer;
-
+  cursor: pointer;
 }
 
 /*
