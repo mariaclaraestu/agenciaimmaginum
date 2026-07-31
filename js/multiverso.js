@@ -161,7 +161,11 @@ portais.forEach((portal) => {
   // CLIQUE
 
   portal.addEventListener("click", () => {
-    abrirUniverso(universoEncontrado);
+    ativarPortal(portal, universoEncontrado);
+
+    setTimeout(() => {
+      abrirUniverso(universoEncontrado);
+    }, 700);
   });
 });
 
@@ -284,7 +288,9 @@ function abrirUniverso(universo) {
 
 
     `;
-
+  document.querySelectorAll(".box").forEach((portal) => {
+    limparPortal(portal);
+  });
   janela.classList.add("ativa");
 }
 

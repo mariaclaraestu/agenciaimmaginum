@@ -396,7 +396,7 @@ HOVER DO PORTAL
 */
 
 .box:hover {
-  transform: translateY(-10px) scale(1.03);
+  transform: translateY(-12px) scale(1.04);
 
   border-color: rgba(47, 216, 255, 0.9);
 
@@ -536,7 +536,9 @@ PULSO DIMENSIONAL
 */
 
 .box:hover {
-  animation: portalPulso 2s infinite;
+  animation:
+    portalRespirando 6s infinite,
+    portalPulso 2s infinite;
 }
 
 @keyframes portalPulso {
@@ -837,6 +839,31 @@ PORTAL CORROMPIDO
 
 .cyberpunk {
   --energia: #00ffff;
+  animation:
+    portalPulsoSuave 12s infinite,
+    glitchSuave 10s infinite;
+}
+
+@keyframes glitchSuave {
+  0%,
+  96%,
+  100% {
+    transform: none;
+    filter: none;
+  }
+
+  97% {
+    transform: translateX(-1px);
+    filter: hue-rotate(20deg);
+  }
+
+  98% {
+    transform: translateX(1px);
+  }
+
+  99% {
+    transform: none;
+  }
 }
 
 .cyberpunk:hover {
@@ -2059,6 +2086,76 @@ JANELA DE INFORMAÇÃO DO UNIVERSO
   padding: 8px 15px;
 
   cursor: pointer;
+}
+
+/*
+====================================================
+PORTAIS EM REPOUSO
+====================================================
+*/
+
+.box {
+  animation: portalRespirando 6s ease-in-out infinite;
+}
+
+.box::before {
+  opacity: 0.55;
+  transform: translate(-50%, -50%) scale(0.95);
+  animation: energiaInterna 5s ease-in-out infinite;
+}
+
+.box figure::before {
+  opacity: 0.55;
+  animation: particulasPortal 15s linear infinite;
+  background-size:
+    60px 60px,
+    90px 90px,
+    130px 130px;
+}
+
+.box img {
+  animation: imagemRespirando 8s ease-in-out infinite;
+}
+
+@keyframes portalRespirando {
+  0%,
+  100% {
+    box-shadow:
+      0 0 12px rgba(47, 216, 255, 0.12),
+      inset 0 0 8px rgba(47, 216, 255, 0.04);
+  }
+
+  50% {
+    box-shadow:
+      0 0 22px rgba(47, 216, 255, 0.22),
+      inset 0 0 18px rgba(47, 216, 255, 0.08);
+  }
+}
+
+@keyframes energiaInterna {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes imagemRespirando {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: scale(1.015);
+    filter: brightness(1.05);
+  }
 }
 
 /*
